@@ -19,58 +19,58 @@ This guide extends the project-analyzer skill with systematic deep-dive analysis
 **Time**: 1-2 hours
 **Topics**: All standard + advanced topics
 
-## 渐进式文档创建流程
+## Progressive Documentation Creation Process
 
-### 每个主题的分析循环
+### Analysis Cycle for Each Topic
 
-对于每个主题，执行以下步骤：
+For each topic, execute the following steps:
 
-1. **📖 分析阶段** (Analyze)
-   - 收集信息和数据
-   - 创建必要的图表
-   - 分析核心内容
+1. **📖 Analysis Phase** (Analyze)
+   - Collect information and data
+   - Create necessary diagrams
+   - Analyze core content
 
-2. **💾 保存阶段** (Save)
-   - 创建独立主题文档: `topics/XX-[主题名].md`
-   - 保存到项目目录
-   - 记录时间戳和元数据
+2. **💾 Save Phase** (Save)
+   - Create independent topic document: `topics/XX-[topic-name].md`
+   - Save to project directory
+   - Record timestamp and metadata
 
-3. **📊 更新阶段** (Update)
-   - 更新主综合报告对应章节
-   - 更新进度追踪文档
-   - 添加文档间链接
+3. **📊 Update Phase** (Update)
+   - Update corresponding sections in main comprehensive report
+   - Update progress tracking document
+   - Add links between documents
 
-4. **📢 汇报阶段** (Report)
-   - 向用户汇报完成状态
-   - 显示关键发现摘要
-   - 提供文档位置链接
+4. **📢 Report Phase** (Report)
+   - Report completion status to user
+   - Display key findings summary
+   - Provide document location links
 
-5. **➡️ 继续阶段** (Continue)
-   - 自动进入下一个主题
-   - 无需用户确认
+5. **➡️ Continue Phase** (Continue)
+   - Automatically move to next topic
+   - No user confirmation required
 
-### 文档创建时机
+### Document Creation Timing
 
 ```
-主题开始 → 分析完成 → 立即创建文档 → 更新进度 → 汇报 → 下一个主题
-   ↓           ↓            ↓            ↓        ↓
-  开始      内容准备    文件保存      状态更新   用户通知
+Topic Start → Analysis Complete → Create Document Immediately → Update Progress → Report → Next Topic
+     ↓              ↓                    ↓                      ↓            ↓
+   Start       Content Prep         File Save            Status Update   User Notification
 ```
 
-### 文档保存策略
+### Document Save Strategy
 
-**即时保存原则**:
-- 每个主题分析完成后立即创建独立文档
-- 不等待整个分析完成
-- 防止数据丢失
-- 提供实时进度可见性
+**Immediate Save Principle**:
+- Create independent document immediately after completing each topic analysis
+- Don't wait for entire analysis to complete
+- Prevent data loss
+- Provide real-time progress visibility
 
-**保存内容**:
-- 主题详细分析内容
-- 相关 Mermaid 图表
-- 关键发现和洞察
-- 参考资源链接
-- 分析元数据（时间、耗时、置信度）
+**Save Content**:
+- Detailed topic analysis content
+- Relevant Mermaid diagrams
+- Key findings and insights
+- Reference resource links
+- Analysis metadata (time, duration, confidence level)
 
 ## Progressive Analysis Strategy
 

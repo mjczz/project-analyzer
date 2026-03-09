@@ -1,40 +1,40 @@
-# Project Analyzer - 文档组织指南
+# Project Analyzer - Documentation Organization Guide
 
-## 文件组织结构
+## File Organization Structure
 
-每次项目分析都会创建一个结构化的文档目录，便于管理和查阅。
+Each project analysis creates a structured documentation directory for easy management and reference.
 
-### 目录结构
+### Directory Structure
 
 ```
 [project-name]/
-└── ai-analysis-docs/                   # 所有分析文档统一存放
-    ├── changelog.md                   # 分析变更日志
-    ├── [project-name]-分析.md         # 主要综合报告
-    ├── [project-name]-进度追踪.md     # 分析进度跟踪
-    ├── analysis-todo.md               # 分析待办事项
-    ├── topics/                        # 主题分析文档
-    │   ├── 01-项目基本信息.md
-    │   ├── 02-项目结构.md
-    │   ├── 03-技术栈.md
-    │   ├── 04-核心功能.md
-    │   ├── 05-架构设计.md
-    │   ├── 06-代码质量.md
-    │   ├── 07-文档质量.md
-    │   ├── 08-项目活跃度.md
-    │   ├── 09-优缺点.md
-    │   ├── 10-适用场景.md
-    │   ├── 11-学习价值.md
-    │   ├── 12-总结.md
-    │   ├── 13-源码深度分析.md         # 深度分析模式
-    │   ├── 14-实现机制剖析.md         # 深度分析模式
-    │   ├── 15-关键组件解析.md         # 深度分析模式
-    │   ├── 16-协议接口分析.md         # 深度分析模式
-    │   ├── 17-工作流程追踪.md         # 深度分析模式
-    │   ├── 18-安全性分析.md           # 深度分析模式
-    │   ├── 19-性能分析.md             # 深度分析模式
-    │   └── 20-测试策略分析.md         # 深度分析模式
-    └── assets/                        # 图表和图片
+└── ai-analysis-docs/                   # Unified storage for all analysis documents
+    ├── changelog.md                   # Analysis change log
+    ├── [project-name]-analysis.md     # Main comprehensive report
+    ├── [project-name]-progress-tracking.md  # Analysis progress tracking
+    ├── analysis-todo.md               # Analysis TODO list
+    ├── topics/                        # Topic analysis documents
+    │   ├── 01-project-basic-info.md
+    │   ├── 02-project-structure.md
+    │   ├── 03-tech-stack.md
+    │   ├── 04-core-features.md
+    │   ├── 05-architecture-design.md
+    │   ├── 06-code-quality.md
+    │   ├── 07-documentation-quality.md
+    │   ├── 08-project-activity.md
+    │   ├── 09-strengths-weaknesses.md
+    │   ├── 10-use-cases.md
+    │   ├── 11-learning-value.md
+    │   ├── 12-summary.md
+    │   ├── 13-source-code-deep-dive.md         # Deep analysis mode
+    │   ├── 14-implementation-mechanics.md       # Deep analysis mode
+    │   ├── 15-key-component-analysis.md        # Deep analysis mode
+    │   ├── 16-protocol-interface-analysis.md   # Deep analysis mode
+    │   ├── 17-workflow-tracing.md              # Deep analysis mode
+    │   ├── 18-security-analysis.md             # Deep analysis mode
+    │   ├── 19-performance-analysis.md          # Deep analysis mode
+    │   └── 20-testing-strategy-analysis.md     # Deep analysis mode
+    └── assets/                        # Diagrams and images
         ├── diagrams/
         │   ├── architecture.mmd
         │   ├── sequence.mmd
@@ -42,429 +42,417 @@
         └── images/
 ```
 
-## 文件命名规范
+## File Naming Conventions
 
-### 主要文档
-- **综合报告**: `[project-name]-分析.md`
-- **进度追踪**: `[project-name]-进度追踪.md`
+### Main Documents
+- **Comprehensive Report**: `[project-name]-analysis.md`
+- **Progress Tracking**: `[project-name]-progress-tracking.md`
 
-### 主题文档
-格式: `XX-[主题名称].md`
-- `XX`: 两位数字序号 (01-20)
-- `[主题名称]`: 简化的主题名称
+### Topic Documents
+Format: `XX-[topic-name].md`
+- `XX`: Two-digit sequence number (01-20)
+- `[topic-name]`: Simplified topic name
 
-**示例**:
+**Examples**:
 ```
-01-项目基本信息.md
-13-源码深度分析.md
+01-project-basic-info.md
+13-source-code-deep-dive.md
 ```
 
-### 图表文件
-格式: `[图表类型]-[描述].mmd`
+### Diagram Files
+Format: `[diagram-type]-[description].mmd`
 - `architecture-overview.mmd`
 - `sequence-user-flow.mmd`
 - `flowchart-data-processing.mmd`
 
-## 分析变更日志 (changelog.md)
+## Analysis Change Log (changelog.md)
 
-每个分析项目都包含一个变更日志，记录分析过程中的所有文档创建活动：
+Each analysis project includes a change log that records all document creation activities during the analysis process:
 
 ```markdown
-# 项目分析变更日志
+# Project Analysis Change Log
 
-## 📋 分析概览
-- **项目名称**: [Project Name]
-- **分析模式**: [快速评估/标准分析/深度分析]
-- **分析开始时间**: [Timestamp]
-- **当前状态**: [In Progress/Completed]
+## 📋 Analysis Overview
+- **Project Name**: [Project Name]
+- **Analysis Mode**: [Quick Assessment/Standard Analysis/Deep Analysis]
+- **Analysis Start Time**: [Timestamp]
+- **Current Status**: [In Progress/Completed]
 
-## 🔄 分析变更记录
+## 🔄 Analysis Change Records
 
-### [日期] - 分析启动
-**时间**: [Timestamp]
-**操作**: 启动项目分析
-**创建的文件**: [列出所有初始化文件]
+### [Date] - Analysis Initiation
+**Time**: [Timestamp]
+**Operation**: Started project analysis
+**Created Files**: [List all initialization files]
 
-## 📝 主题文档创建记录
+## 📝 Topic Document Creation Records
 
-### [日期] - [主题名称] 完成
-**时间**: [Timestamp]
-**主题**: [Topic Number]. [Topic Name]
-**进度**: [X/12]
-**创建的文档**: `topics/[XX]-[topic-name].md`
-**关键发现**: [列出主要发现]
-**更新的文件**: [列出更新的文件]
+### [Date] - [Topic Name] Completed
+**Time**: [Timestamp]
+**Topic**: [Topic Number]. [Topic Name]
+**Progress**: [X/12]
+**Created Document**: `topics/[XX]-[topic-name].md`
+**Key Findings**: [List main discoveries]
+**Updated Files**: [List updated files]
 
-## 📊 分析统计
-### 文档创建统计
-| 类别 | 创建数量 | 总大小 | 最后更新 |
-|------|---------|--------|---------|
-| 主题文档 | X/12 | [总大小] | [timestamp] |
+## 📊 Analysis Statistics
+### Document Creation Statistics
+| Category | Created Count | Total Size | Last Updated |
+|----------|----------------|------------|--------------|
+| Topic Documents | X/12 | [Total Size] | [timestamp] |
 
-## 🎯 里程碑
-- [x] [timestamp] - 分析启动
-- [x] [timestamp] - 第一个主题完成
-- [ ] [timestamp] - 完成一半主题 (6/12)
+## 🎯 Milestones
+- [x] [timestamp] - Analysis started
+- [x] [timestamp] - First topic completed
+- [ ] [timestamp] - Halfway through topics (6/12)
 ```
 
-### Changelog 维护规则
+### Changelog Maintenance Rules
 
-1. **自动更新**: 每完成一个主题自动更新
-2. **时间记录**: 精确到秒的时间戳
-3. **文件记录**: 记录所有创建和更新的文件
-4. **统计信息**: 实时更新文档统计和进度
-5. **里程碑跟踪**: 标记重要分析节点
+1. **Auto Update**: Update automatically after completing each topic
+2. **Time Recording**: Precise timestamps to the second
+3. **File Recording**: Record all created and updated files
+4. **Statistics**: Real-time update of document statistics and progress
+5. **Milestone Tracking**: Mark important analysis nodes
 
-## 分析待办文档 (analysis-todo.md)
+## Analysis TODO Document (analysis-todo.md)
 
-每个分析项目都包含一个待办事项文档，用于跟踪分析计划和进度：
+Each analysis project includes a TODO document for tracking analysis plans and progress:
 
 ```markdown
-# [Project Name] 分析待办清单
+# [Project Name] Analysis TODO List
 
-## 📋 分析总览
+## 📋 Analysis Overview
 
-- **项目名称**: [Project Name]
-- **分析模式**: [快速评估/标准分析/深度分析]
-- **创建时间**: [Timestamp]
-- **预计完成**: [Timestamp]
-- **当前状态**: 进行中
+- **Project Name**: [Project Name]
+- **Analysis Mode**: [Quick Assessment/Standard Analysis/Deep Analysis]
+- **Creation Time**: [Timestamp]
+- **Estimated Completion**: [Timestamp]
+- **Current Status**: In Progress
 
-## 🎯 分析计划
+## 🎯 Analysis Plan
 
-### 标准分析阶段 (12主题)
+### Standard Analysis Phase (12 Topics)
 
-- [ ] **01. 项目基本信息**
-  - 状态: ⏳ 待开始
-  - 优先级: 🔥 高
-  - 预计时间: 5-10分钟
-  - 内容: GitHub数据收集、基本信息整理
+- [ ] **01. Project Basic Information**
+  - Status: ⏳ Not Started
+  - Priority: 🔥 High
+  - Estimated Time: 5-10 minutes
+  - Content: GitHub data collection, basic information organization
 
-- [ ] **02. 项目结构**
-  - 状态: ⏳ 待开始
-  - 优先级: 🔥 高
-  - 预计时间: 10-15分钟
-  - 内容: 目录结构分析、模块关系图
+- [ ] **02. Project Structure**
+  - Status: ⏳ Not Started
+  - Priority: 🔥 High
+  - Estimated Time: 10-15 minutes
+  - Content: Directory structure analysis, module relationship diagrams
 
-- [ ] **03. 技术栈**
-  - 状态: ⏳ 待开始
-  - 优先级: 🔥 高
-  - 预计时间: 8-12分钟
-  - 内容: 依赖分析、技术栈组成
+### Deep Analysis Phase (8 Topics) - Optional
 
-### 深度分析阶段 (8主题) - 可选
+- [ ] **13. Source Code Deep Dive**
+  - Status: ⏳ Not Started
+  - Priority: 🔥 High
+  - Estimated Time: 20-30 minutes
+  - Content: Core code paths, function call chains
 
-- [ ] **13. 源码深度分析**
-  - 状态: ⏳ 待开始
-  - 优先级: 🔥 高
-  - 预计时间: 20-30分钟
-  - 内容: 核心代码路径、函数调用链
+## 📊 Progress Statistics
 
-- [ ] **14. 实现机制剖析**
-  - 状态: ⏳ 待开始
-  - 优先级: 🔥 高
-  - 预计时间: 15-25分钟
-  - 内容: 工作原理、实现流程
+### Completion Overview
 
-## 📊 进度统计
+- **Standard Analysis**: X/12 (X%)
+- **Deep Analysis**: X/8 (X%)
+- **Overall Progress**: X/20 (X%)
 
-### 完成度概览
+### Time Statistics
 
-- **标准分析**: X/12 (X%)
-- **深度分析**: X/8 (X%)
-- **总体进度**: X/20 (X%)
+- **Time Spent**: XX minutes
+- **Estimated Remaining**: XX minutes
+- **Total Estimated Time**: XX minutes
 
-### 时间统计
+## 🔄 Workflow
 
-- **已用时间**: XX分钟
-- **预计剩余**: XX分钟
-- **总预计时间**: XX分钟
+### Current Task
 
-## 🔄 工作流程
+**Currently Working**: [Topic Name]
+- **Start Time**: [timestamp]
+- **Estimated Completion**: [timestamp]
+- **Key Points**:
+  - [ ] Point 1
+  - [ ] Point 2
 
-### 当前任务
+### Next Steps
 
-**正在进行**: [主题名称]
-- **开始时间**: [timestamp]
-- **预计完成**: [timestamp]
-- **关键要点**:
-  - [ ] 要点1
-  - [ ] 要点2
+1. [Next topic name]
+2. [Following topic name]
 
-### 下一步
+## 📝 Notes and Observations
 
-1. [下一个主题名称]
-2. [再下一个主题名称]
+### Technical Challenges
+- [Challenge 1]: [Description]
+- [Challenge 2]: [Description]
 
-## 📝 备注和观察
+### Interesting Findings
+- [Finding 1]: [Description]
+- [Finding 2]: [Description]
 
-### 技术难点
-- [难点1]: [描述]
-- [难点2]: [描述]
-
-### 有趣发现
-- [发现1]: [描述]
-- [发现2]: [描述]
-
-### 后续深入方向
-- [方向1]: [描述]
-- [方向2]: [描述]
+### Future Deep Dive Directions
+- [Direction 1]: [Description]
+- [Direction 2]: [Description]
 
 ---
 
-*创建时间: [timestamp]*
-*最后更新: [timestamp]*
-*更新者: Claude Code*
+*Creation time: [timestamp]*
+*Last updated: [timestamp]*
+*Updated by: Claude Code*
 ```
 
-## 进度追踪文档
+## Progress Tracking Document
 
-每个分析项目都包含一个进度追踪文档：
+Each analysis project includes a progress tracking document:
 
 ```markdown
-# [Project Name] 分析进度追踪
+# [Project Name] Analysis Progress Tracking
 
-## 📊 分析总览
+## 📊 Analysis Overview
 
-- **项目名称**: [Project Name]
-- **分析模式**: [快速评估/标准分析/深度分析]
-- **开始时间**: [Timestamp]
-- **预计完成**: [Timestamp]
-- **当前状态**: 进行中 (X/20)
+- **Project Name**: [Project Name]
+- **Analysis Mode**: [Quick Assessment/Standard Analysis/Deep Analysis]
+- **Start Time**: [Timestamp]
+- **Estimated Completion**: [Timestamp]
+- **Current Status**: In Progress (X/20)
 
-## ✅ 完成进度
+## ✅ Completion Progress
 
-### 标准分析阶段 (X/12)
+### Standard Analysis Phase (X/12)
 
-- [x] 01. 项目基本信息 - [完成时间]
-- [x] 02. 项目结构 - [完成时间]
-- [ ] 03. 技术栈 - 进行中
-- [ ] 04. 核心功能 - 待开始
-- [ ] 05. 架构设计 - 待开始
-- [ ] 06. 代码质量 - 待开始
-- [ ] 07. 文档质量 - 待开始
-- [ ] 08. 项目活跃度 - 待开始
-- [ ] 09. 优缺点 - 待开始
-- [ ] 10. 适用场景 - 待开始
-- [ ] 11. 学习价值 - 待开始
-- [ ] 12. 总结 - 待开始
+- [x] 01. Project Basic Information - [Completion Time]
+- [x] 02. Project Structure - [Completion Time]
+- [ ] 03. Tech Stack - In Progress
+- [ ] 04. Core Features - Not Started
+- [ ] 05. Architecture Design - Not Started
+- [ ] 06. Code Quality - Not Started
+- [ ] 07. Documentation Quality - Not Started
+- [ ] 08. Project Activity - Not Started
+- [ ] 09. Strengths/Weaknesses - Not Started
+- [ ] 10. Use Cases - Not Started
+- [ ] 11. Learning Value - Not Started
+- [ ] 12. Summary - Not Started
 
-### 深度分析阶段 (X/8) - 可选
+### Deep Analysis Phase (X/8) - Optional
 
-- [ ] 13. 源码深度分析 - 待开始
-- [ ] 14. 实现机制剖析 - 待开始
-- [ ] 15. 关键组件解析 - 待开始
-- [ ] 16. 协议接口分析 - 待开始
-- [ ] 17. 工作流程追踪 - 待开始
-- [ ] 18. 安全性分析 - 待开始
-- [ ] 19. 性能分析 - 待开始
-- [ ] 20. 测试策略分析 - 待开始
+- [ ] 13. Source Code Deep Dive - Not Started
+- [ ] 14. Implementation Mechanics - Not Started
+- [ ] 15. Key Component Analysis - Not Started
+- [ ] 16. Protocol Interface Analysis - Not Started
+- [ ] 17. Workflow Tracing - Not Started
+- [ ] 18. Security Analysis - Not Started
+- [ ] 19. Performance Analysis - Not Started
+- [ ] 20. Testing Strategy Analysis - Not Started
 
-## 📝 分析日志
+## 📝 Analysis Log
 
-### [日期] - 主题名称完成
-- **耗时**: XX分钟
-- **关键发现**:
-  - 发现1
-  - 发现2
-- **下一步**: [下一个主题]
+### [Date] - Topic Name Completed
+- **Time Spent**: XX minutes
+- **Key Findings**:
+  - Finding 1
+  - Finding 2
+- **Next Step**: [Next topic]
 
-## 🔗 快速链接
+## 🔗 Quick Links
 
-- [综合报告](./[project-name]-分析.md)
-- [主题文档目录](./topics/)
-- [图表资源](./assets/)
+- [Comprehensive Report](./[project-name]-analysis.md)
+- [Topic Documents Directory](./topics/)
+- [Diagram Resources](./assets/)
 
 ---
 
-*最后更新: [timestamp]*
+*Last updated: [timestamp]*
 ```
 
-## 主题文档模板
+## Topic Document Template
 
-每个主题文档都遵循统一的结构：
+Each topic document follows a unified structure:
 
 ```markdown
-# [序号]. [主题名称] - [项目名称]
+# [Number]. [Topic Name] - [Project Name]
 
-## 📋 主题概览
-- **分析主题**: [主题名称]
-- **项目**: [项目名称]
-- **分析时间**: [YYYY-MM-DD HH:MM:SS]
-- **分析耗时**: XX分钟
-- **分析状态**: ✅ 已完成
-- **分析模式**: [快速评估/标准分析/深度分析]
+## 📋 Topic Overview
+- **Analysis Topic**: [Topic Name]
+- **Project**: [Project Name]
+- **Analysis Time**: [YYYY-MM-DD HH:MM:SS]
+- **Time Spent**: XX minutes
+- **Analysis Status**: ✅ Completed
+- **Analysis Mode**: [Quick Assessment/Standard Analysis/Deep Analysis]
 
-## 🎯 分析目标
-[本主题的分析目标和重点]
+## 🎯 Analysis Objectives
+[Analysis objectives and focus for this topic]
 
-## 🔍 详细分析
+## 🔍 Detailed Analysis
 
-### 1. [子主题1]
-[详细分析内容]
+### 1. [Sub-topic 1]
+[Detailed analysis content]
 
-### 2. [子主题2]
-[详细分析内容]
+### 2. [Sub-topic 2]
+[Detailed analysis content]
 
-## 📊 关键发现
+## 📊 Key Findings
 
-### 核心发现
-- **发现1**: [详细描述]
-  - 影响范围: [描述]
-  - 重要性: [高/中/低]
-- **发现2**: [详细描述]
-  - 影响范围: [描述]
-  - 重要性: [高/中/低]
+### Core Discoveries
+- **Finding 1**: [Detailed description]
+  - Impact Scope: [Description]
+  - Importance: [High/Medium/Low]
+- **Finding 2**: [Detailed description]
+  - Impact Scope: [Description]
+  - Importance: [High/Medium/Low]
 
-### 数据和指标
-| 指标 | 数值 | 说明 |
-|------|------|------|
+### Data and Metrics
+| Metric | Value | Description |
+|--------|-------|-------------|
 | | | |
 
-## 📈 可视化
+## 📈 Visualization
 
 ```mermaid
-[相关图表]
+[Relevant diagrams]
 ```
 
-## 🔗 源码引用
-| 功能/组件 | 文件位置 | 行号 | 说明 |
-|----------|---------|------|------|
+## 🔗 Source Code References
+| Function/Component | File Location | Line Number | Description |
+|-------------------|---------------|-------------|-------------|
 | | | | |
 
-## 📚 参考资源
-- **官方文档**: [链接]
-- **源码位置**: [path/to/file]
-- **相关主题**: [链接到其他主题文档]
+## 📚 Reference Resources
+- **Official Documentation**: [Link]
+- **Source Location**: [path/to/file]
+- **Related Topics**: [Links to other topic documents]
 
-## 💡 洞察和建议
+## 💡 Insights and Recommendations
 
-### 优势
-- [优势1]
-- [优势2]
+### Strengths
+- [Strength 1]
+- [Strength 2]
 
-### 待改进
-- [改进建议1]
-- [改进建议2]
+### Areas for Improvement
+- [Improvement suggestion 1]
+- [Improvement suggestion 2]
 
-### 实践建议
-- [建议1]
-- [建议2]
-
----
-
-## 📋 分析元数据
-
-- **分析工具**: project-analyzer skill
-- **数据来源**: [GitHub API/文档/源码]
-- **置信度**: [高/中/低]
-- **验证状态**: [已验证/待验证]
-- **相关issue/PR**: [链接]
-
-## 🔄 更新历史
-
-| 时间 | 更新内容 | 更新人 |
-|------|----------|--------|
-| [timestamp] | 初始分析 | Claude Code |
+### Practice Recommendations
+- [Recommendation 1]
+- [Recommendation 2]
 
 ---
 
-*本文档由 project-analyzer skill 自动生成*
-*生成时间: [timestamp]*
-*文档版本: 1.0*
+## 📋 Analysis Metadata
+
+- **Analysis Tool**: project-analyzer skill
+- **Data Source**: [GitHub API/Documentation/Source Code]
+- **Confidence Level**: [High/Medium/Low]
+- **Verification Status**: [Verified/Pending Verification]
+- **Related Issues/PRs**: [Links]
+
+## 🔄 Update History
+
+| Time | Update Content | Updated By |
+|------|----------------|------------|
+| [timestamp] | Initial analysis | Claude Code |
+
+---
+
+*This document was auto-generated by project-analyzer skill*
+*Generated at: [timestamp]*
+*Document version: 1.0*
 ```
 
-## 综合报告结构
+## Comprehensive Report Structure
 
-主报告文档整合所有主题的分析结果：
+The main report document integrates analysis results from all topics:
 
 ```markdown
-# [Project Name] 项目分析报告
+# [Project Name] Project Analysis Report
 
-## 📊 执行摘要
+## 📊 Executive Summary
 
-[项目整体概览和关键发现]
+[Overall project overview and key findings]
 
-## 📋 目录
+## 📋 Table of Contents
 
-1. [项目基本信息](#1-项目基本信息)
-2. [项目结构](#2-项目结构)
+1. [Project Basic Information](#1-project-basic-information)
+2. [Project Structure](#2-project-structure)
 ...
-20. [测试策略分析](#20-测试策略分析) (如果适用)
+20. [Testing Strategy Analysis](#20-testing-strategy-analysis) (if applicable)
 
-## 📊 详细分析
+## 📊 Detailed Analysis
 
-### 1. 项目基本信息
+### 1. Project Basic Information
 
-[整合自 topics/01-项目基本信息.md 的核心内容]
+[Integrated core content from topics/01-project-basic-info.md]
 
-### 2. 项目结构
+### 2. Project Structure
 
-[整合自 topics/02-项目结构.md 的核心内容]
+[Integrated core content from topics/02-project-structure.md]
 
 ...
 
-## 🎯 核心结论
+## 🎯 Core Conclusions
 
-### 主要优势
-1. [优势1]
-2. [优势2]
+### Main Strengths
+1. [Strength 1]
+2. [Strength 2]
 
-### 主要挑战
-1. [挑战1]
-2. [挑战2]
+### Main Challenges
+1. [Challenge 1]
+2. [Challenge 2]
 
-### 推荐使用场景
-- [场景1]
-- [场景2]
+### Recommended Use Cases
+- [Use case 1]
+- [Use case 2]
 
-## 📈 评分卡
+## 📈 Scorecard
 
-| 维度 | 评分 | 说明 |
-|------|------|------|
-| 架构设计 | ⭐⭐⭐⭐⭐ | [说明] |
-| 代码质量 | ⭐⭐⭐⭐⭐ | [说明] |
-| 文档完善度 | ⭐⭐⭐⭐⭐ | [说明] |
-| 社区活跃度 | ⭐⭐⭐⭐⭐ | [说明] |
-| **综合评分** | **⭐⭐⭐⭐⭐** | [说明] |
+| Dimension | Score | Description |
+|-----------|-------|-------------|
+| Architecture Design | ⭐⭐⭐⭐⭐ | [Description] |
+| Code Quality | ⭐⭐⭐⭐⭐ | [Description] |
+| Documentation Completeness | ⭐⭐⭐⭐⭐ | [Description] |
+| Community Activity | ⭐⭐⭐⭐⭐ | [Description] |
+| **Overall Score** | **⭐⭐⭐⭐⭐** | [Description] |
 
-## 🔗 相关文档
+## 🔗 Related Documents
 
-- [详细主题分析](./topics/)
-- [分析进度](./[project-name]-进度追踪.md)
-- [图表资源](./assets/)
+- [Detailed Topic Analysis](./topics/)
+- [Analysis Progress](./[project-name]-progress-tracking.md)
+- [Diagram Resources](./assets/)
 
 ---
 
-*报告生成时间: [timestamp]*
-*分析模式: [模式名称]*
-*分析工具: project-analyzer skill*
+*Report generation time: [timestamp]*
+*Analysis mode: [Mode name]*
+*Analysis tool: project-analyzer skill*
 ```
 
-## 文档管理最佳实践
+## Documentation Management Best Practices
 
-### 自动化创建
-1. 每完成一个主题，立即创建对应的主题文档
-2. 同时更新进度追踪文档
-3. 更新主综合报告的相关章节
+### Automated Creation
+1. Create corresponding topic documents immediately after completing each topic
+2. Update progress tracking documents simultaneously
+3. Update relevant sections in the main comprehensive report
 
-### 文档关联
-- 使用相对链接连接相关文档
-- 主题文档间互相引用
-- 主报告链接到所有主题文档
+### Document Linking
+- Use relative links to connect related documents
+- Cross-reference between topic documents
+- Link main report to all topic documents
 
-### 版本控制
-- 每个文档底部包含生成时间戳
-- 重大更新时记录更新历史
-- 保持文档版本一致性
+### Version Control
+- Include generation timestamp at the bottom of each document
+- Record update history for major updates
+- Maintain document version consistency
 
-### 质量控制
-- 使用统一的模板和格式
-- 确保所有链接有效
-- 验证图表渲染正确
+### Quality Control
+- Use unified templates and formats
+- Ensure all links are valid
+- Verify diagrams render correctly
 
-这种渐进式文档创建策略确保：
-1. **实时保存**: 每个主题完成后立即保存，防止数据丢失
-2. **灵活查阅**: 可以单独查看任何主题的详细分析
-3. **进度透明**: 清晰展示分析进度和状态
-4. **易于维护**: 结构化组织便于后续更新和扩展
+This progressive documentation creation strategy ensures:
+1. **Real-time Saving**: Each topic is saved immediately upon completion, preventing data loss
+2. **Flexible Viewing**: Can view detailed analysis of any topic individually
+3. **Progress Transparency**: Clearly shows analysis progress and status
+4. **Easy Maintenance**: Structured organization facilitates subsequent updates and expansion

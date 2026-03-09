@@ -1,67 +1,67 @@
-# 开源项目分析模版
+# Open Source Project Analysis Template
 
-> 使用说明：复制本文件，命名为 `[项目名]-分析.md`，填写相关内容。
-
----
-
-## 📋 项目基本信息
-
-| 项目 | 内容 |
-|------|------|
-| **名称** | |
-| **项目路径** | |
-| **项目类型** | 本地项目 / 远程仓库 |
-| **主要语言** | |
-| **文件总数** | |
-| **代码行数** | |
-| **描述** | |
-| **许可证** | |
-| **分析日期** | {{date}} |
+> Usage Instructions: Copy this file, name it `[project-name]-analysis.md`, and fill in the relevant content.
 
 ---
 
-## 🏗️ 项目结构
+## 📋 Project Basic Information
+
+| Project | Content |
+|---------|---------|
+| **Name** | |
+| **Project Path** | |
+| **Project Type** | Local Project / Remote Repository |
+| **Primary Language** | |
+| **Total Files** | |
+| **Lines of Code** | |
+| **Description** | |
+| **License** | |
+| **Analysis Date** | {{date}} |
+
+---
+
+## 🏗️ Project Structure
 
 ```
-├── [目录结构]
+├── [Directory structure]
 └── ...
 ```
 
-**关键目录说明：**
+**Key Directory Description:**
 
-### 模块关系图
+### Module Relationship Diagram
 
 ```mermaid
 graph LR
-    A[核心模块] --> B[工具模块]
-    A --> C[配置模块]
-    D[API层] --> A
-    D --> E[中间件]
+    A[Core Module] --> B[Utils Module]
+    A --> C[Config Module]
+    D[API Layer] --> A
+    D --> E[Middleware]
     E --> C
-    F[测试] --> A
+    F[Tests] --> A
 ```
 
 ---
 
-## 🛠️ 技术栈
+## 🛠️ Tech Stack
 
-- **主要语言：**
-- **框架/库：**
-- **构建工具：**
-- **测试框架：**
-- **CI/CD：**
-- **其他依赖：**
+- **Primary Languages:**
+- **Frameworks/Libraries:**
+- **Build Tools:**
+- **Testing Frameworks:**
+- **CI/CD:**
+- **Other Dependencies:**
 
-### 依赖关系图
+### Dependency Diagram
 
 ```mermaid
 graph TD
-    A[应用] --> B[核心库1]
-    A --> C[核心库2]
-    B --> D[工具库]
+    A[Application] --> B[Core Library 1]
+    A --> C[Core Library 2]
+    B --> D[Utility Library]
     C --> D
-    B --> E[第三方API]
-    C --> F[数据库驱动]
+    B --> E[Third-party API]
+    C --> F[Database Driver]
 
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style B fill:#bbf,stroke:#333,stroke-width:1px
@@ -70,57 +70,57 @@ graph TD
 
 ---
 
-## 🎯 核心功能
+## 🎯 Core Features
 
-1. [功能1]
-2. [功能2]
-3. [功能3]
+1. [Feature 1]
+2. [Feature 2]
+3. [Feature 3]
 4. ...
 
-### 核心流程时序图
+### Core Process Sequence Diagram
 
 ```mermaid
 sequenceDiagram
-    participant User as 用户
-    participant Frontend as 前端
-    participant Backend as 后端
-    participant DB as 数据库
+    participant User as User
+    participant Frontend as Frontend
+    participant Backend as Backend
+    participant DB as Database
 
-    User->>Frontend: 发起请求
-    Frontend->>Backend: API 调用
-    Backend->>DB: 查询数据
-    DB-->>Backend: 返回结果
-    Backend-->>Frontend: 响应数据
-    Frontend-->>User: 展示结果
+    User->>Frontend: Initiate request
+    Frontend->>Backend: API call
+    Backend->>DB: Query data
+    DB-->>Backend: Return result
+    Backend-->>Frontend: Response data
+    Frontend-->>User: Display result
 ```
 
 ---
 
-## 🏛️ 架构设计
+## 🏛️ Architecture Design
 
-### 架构模式
+### Architecture Pattern
 - [ ] MVC
-- [ ] 微服务
-- [ ] 分层架构
-- [ ] 事件驱动
-- [ ] 其他：___
+- [ ] Microservices
+- [ ] Layered Architecture
+- [ ] Event-Driven
+- [ ] Other: ___
 
-### 架构图
+### Architecture Diagram
 
 ```mermaid
 graph TB
-    subgraph "前端层"
-        A[UI组件]
+    subgraph "Frontend Layer"
+        A[UI Components]
     end
 
-    subgraph "业务层"
-        B[服务A]
-        C[服务B]
+    subgraph "Business Layer"
+        B[Service A]
+        C[Service B]
     end
 
-    subgraph "数据层"
-        D[(数据库)]
-        E[(缓存)]
+    subgraph "Data Layer"
+        D[(Database)]
+        E[(Cache)]
     end
 
     A --> B
@@ -130,242 +130,242 @@ graph TB
     C --> D
 ```
 
-### 关键模块
-| 模块 | 职责 | 依赖关系 |
-|------|------|----------|
+### Key Modules
+| Module | Responsibility | Dependencies |
+|--------|---------------|--------------|
 | | | |
 
-### 数据流
+### Data Flow
 
 ```mermaid
 flowchart LR
-    A[用户请求] --> B[网关/路由]
-    B --> C[业务逻辑处理]
-    C --> D{数据处理}
-    D --> E[查询数据库]
-    D --> F[调用外部服务]
-    E --> G[组装响应]
+    A[User Request] --> B[Gateway/Router]
+    B --> C[Business Logic Processing]
+    C --> D{Data Processing}
+    D --> E[Query Database]
+    D --> F[Call External Services]
+    E --> G[Assemble Response]
     F --> G
-    G --> H[返回用户]
+    G --> H[Return to User]
 ```
 
 ---
 
-## 📊 代码质量
+## 📊 Code Quality
 
-### 代码风格
-- 是否有 lint 配置：
-- 代码风格一致性：
-- 命名规范：
+### Code Style
+- Lint configuration:
+- Code style consistency:
+- Naming conventions:
 
-### 测试覆盖
-- 单元测试：
-- 集成测试：
-- E2E 测试：
-- 测试覆盖率（如有）：
+### Test Coverage
+- Unit tests:
+- Integration tests:
+- E2E tests:
+- Test coverage (if available):
 
-### 代码复杂度
-- 代码是否简洁：
-- 是否有过长函数/类：
-- 是否有坏味道（如代码重复、魔法数字等）：
+### Code Complexity
+- Code conciseness:
+- Overly long functions/classes:
+- Code smells (e.g., code duplication, magic numbers, etc.):
 
 ---
 
-## 📚 文档质量
+## 📚 Documentation Quality
 
-| 类型 | 评分 (1-5) | 说明 |
-|------|-----------|------|
+| Type | Rating (1-5) | Description |
+|------|-------------|-------------|
 | README | ⭐⭐⭐⭐⭐ | |
-| API 文档 | ⭐⭐⭐⭐⭐ | |
-| 贡献指南 | ⭐⭐⭐⭐⭐ | |
-| 架构文档 | ⭐⭐⭐⭐⭐ | |
-| 示例代码 | ⭐⭐⭐⭐⭐ | |
+| API Documentation | ⭐⭐⭐⭐⭐ | |
+| Contributing Guide | ⭐⭐⭐⭐⭐ | |
+| Architecture Documentation | ⭐⭐⭐⭐⭐ | |
+| Example Code | ⭐⭐⭐⭐⭐ | |
 
-**文档亮点：**
-- [ ] 安装步骤清晰
-- [ ] 快速上手示例
-- [ ] 架构图/流程图
-- [ ] FAQ 部分
-- [ ] 更新日志 (CHANGELOG)
-
----
-
-## 📈 项目活跃度
-
-### Git 历史记录（如果可用）
-- 最近一个月提交数：___
-- 最近三个月提交数：___
-- 主要贡献者数量：___
-- 首次提交时间：___
-
-### 本地开发活动
-- 代码更新频率：___
-- 测试活动：___
-- 文档更新：___
-
-### 项目成熟度
-- 项目年龄：___
-- 主要版本：___
-- 发展阶段：___
+**Documentation Highlights:**
+- [ ] Clear installation steps
+- [ ] Quick start examples
+- [ ] Architecture diagrams/flowcharts
+- [ ] FAQ section
+- [ ] Changelog (CHANGELOG)
 
 ---
 
-## ✅ 优点
+## 📈 Project Activity
 
-1. [优点1]
-2. [优点2]
-3. [优点3]
+### Git History (if available)
+- Commits in last month: ___
+- Commits in last 3 months: ___
+- Number of main contributors: ___
+- First commit date: ___
+
+### Local Development Activity
+- Code update frequency: ___
+- Testing activity: ___
+- Documentation updates: ___
+
+### Project Maturity
+- Project age: ___
+- Major versions: ___
+- Development stage: ___
 
 ---
 
-## ⚠️ 缺点 / 待改进
+## ✅ Strengths
 
-1. [缺点1]
-2. [缺点2]
-3. [缺点3]
+1. [Strength 1]
+2. [Strength 2]
+3. [Strength 3]
 
 ---
 
-## 🎯 适用场景
+## ⚠️ Weaknesses / Areas for Improvement
 
-- 适合使用的情况：
+1. [Weakness 1]
+2. [Weakness 2]
+3. [Weakness 3]
+
+---
+
+## 🎯 Use Cases
+
+- Suitable for:
   - ___
   - ___
-- 不适合使用的情况：
+- Not suitable for:
   - ___
   - ___
 
 ---
 
-## 💡 学习价值
+## 💡 Learning Value
 
-**值得学习的地方：**
-- [ ] 架构设计思路
-- [ ] 代码组织方式
-- [ ] 某个具体实现
-- [ ] 测试策略
-- [ ] 文档写作
+**Worth Learning:**
+- [ ] Architecture design approach
+- [ ] Code organization
+- [ ] Specific implementation
+- [ ] Testing strategy
+- [ ] Documentation writing
 
-**推荐阅读顺序：**
+**Recommended Reading Order:**
 1. ___
 2. ___
 3. ___
 
 ---
 
-## 🔗 参考资源
+## 🔗 Reference Resources
 
-- 官方文档：___
-- 教程/文章：___
-- 视频教程：___
-- 社区讨论：___
-
----
-
-## 📝 总结
-
-### 深度分析部分 (可选 - 用于技术深度剖析)
-
-> 注：以下章节适用于需要源码级分析的技术项目
+- Official documentation: ___
+- Tutorials/Articles: ___
+- Video tutorials: ___
+- Community discussions: ___
 
 ---
 
-## 🔧 源码深度分析
+## 📝 Summary
 
-### 核心代码路径
+### Deep Analysis Section (Optional - For technical in-depth analysis)
 
-| 模块/功能 | 源码位置 | 关键文件/函数 | 说明 |
-|----------|---------|--------------|------|
+> Note: The following sections are applicable for technical projects requiring source code-level analysis
+
+---
+
+## 🔧 Source Code Deep Dive
+
+### Core Code Paths
+
+| Module/Function | Source Location | Key Files/Functions | Description |
+|----------------|----------------|-------------------|-------------|
 | | | | |
 
-### 核心数据结构
+### Core Data Structures
 
 ```go
-// 示例：核心数据结构定义
+// Example: Core data structure definition
 type CoreStruct struct {
     Field1 Type
     Field2 Type
 }
 ```
 
-### 关键函数调用链
+### Key Function Call Chains
 
 ```mermaid
 sequenceDiagram
-    participant Client as 客户端
-    participant API as API层
-    participant Core as 核心逻辑
-    participant DB as 数据层
+    participant Client as Client
+    participant API as API Layer
+    participant Core as Core Logic
+    participant DB as Data Layer
 
-    Client->>API: 请求
-    API->>Core: 处理逻辑
-    Core->>DB: 数据访问
-    DB-->>Core: 返回数据
-    Core-->>API: 处理结果
-    API-->>Client: 响应
+    Client->>API: Request
+    API->>Core: Process logic
+    Core->>DB: Data access
+    DB-->>Core: Return data
+    Core-->>API: Process result
+    API-->>Client: Response
 ```
 
 ---
 
-## ⚙️ 实现机制剖析
+## ⚙️ Implementation Mechanics Analysis
 
-### 核心机制分析
+### Core Mechanism Analysis
 
-#### 机制1：[机制名称]
+#### Mechanism 1: [Mechanism Name]
 
-**工作原理：**
-- [原理点1]
-- [原理点2]
-- [原理点3]
+**Working Principle:**
+- [Principle point 1]
+- [Principle point 2]
+- [Principle point 3]
 
-**实现流程：**
+**Implementation Process:**
 
 ```mermaid
 flowchart TD
-    A[开始] --> B[步骤1]
-    B --> C{判断条件}
-    C -->|条件满足| D[步骤2A]
-    C -->|条件不满足| E[步骤2B]
-    D --> F[步骤3]
+    A[Start] --> B[Step 1]
+    B --> C{Condition Check}
+    C -->|Condition Met| D[Step 2A]
+    C -->|Condition Not Met| E[Step 2B]
+    D --> F[Step 3]
     E --> F
-    F --> G[结束]
+    F --> G[End]
 ```
 
-**关键代码片段：**
+**Key Code Snippets:**
 
 ```
-// 关键实现代码
+// Key implementation code
 function keyImplementation() {
-    // 核心逻辑
+    // Core logic
 }
 ```
 
-#### 机制2：[机制名称]
+#### Mechanism 2: [Mechanism Name]
 
-[重复上述结构]
+[Repeat above structure]
 
 ---
 
-## 🔍 关键组件解析
+## 🔍 Key Component Analysis
 
-### 组件架构图
+### Component Architecture Diagram
 
 ```mermaid
 graph TB
-    subgraph "外部接口层"
-        A[API/接口]
+    subgraph "External Interface Layer"
+        A[API/Interface]
     end
 
-    subgraph "核心组件层"
-        B[组件1]
-        C[组件2]
-        D[组件3]
+    subgraph "Core Component Layer"
+        B[Component 1]
+        C[Component 2]
+        D[Component 3]
     end
 
-    subgraph "基础服务层"
-        E[存储]
-        F[网络]
-        G[配置]
+    subgraph "Foundation Service Layer"
+        E[Storage]
+        F[Network]
+        G[Configuration]
     end
 
     A --> B
@@ -378,48 +378,48 @@ graph TB
     D --> G
 ```
 
-### 组件详细分析
+### Detailed Component Analysis
 
-#### 组件1：[组件名称]
+#### Component 1: [Component Name]
 
-**职责：**
-- [职责1]
-- [职责2]
+**Responsibilities:**
+- [Responsibility 1]
+- [Responsibility 2]
 
-**依赖关系：**
-- 依赖：[组件/模块]
-- 被依赖：[组件/模块]
+**Dependencies:**
+- Depends on: [Component/Module]
+- Required by: [Component/Module]
 
-**关键实现：**
-- 文件位置：`path/to/file`
-- 核心函数：`functionName()`
+**Key Implementation:**
+- File location: `path/to/file`
+- Core function: `functionName()`
 
 ---
 
-## 📐 协议与接口分析
+## 📐 Protocol & Interface Analysis
 
-### API 接口规范
+### API Interface Specifications
 
-| 接口 | 方法 | 路径 | 说明 |
-|------|------|------|------|
+| Interface | Method | Path | Description |
+|----------|--------|------|-------------|
 | | | | |
 
-### 通信协议
+### Communication Protocols
 
 ```mermaid
 sequenceDiagram
-    participant Client as 客户端
-    participant Server as 服务端
+    participant Client as Client
+    participant Server as Server
 
-    Client->>Server: 请求消息
-    Note over Client,Server: 协议格式描述
-    Server-->>Client: 响应消息
+    Client->>Server: Request message
+    Note over Client,Server: Protocol format description
+    Server-->>Client: Response message
 ```
 
-### 数据格式
+### Data Formats
 
 ```json
-// 示例：JSON 数据格式
+// Example: JSON data format
 {
   "field1": "value1",
   "field2": "value2"
@@ -428,120 +428,120 @@ sequenceDiagram
 
 ---
 
-## 🚀 工作流程追踪
+## 🚀 Workflow Tracing
 
-### 端到端流程分析
+### End-to-End Process Analysis
 
 ```mermaid
 flowchart LR
-    A[用户操作] --> B[前端处理]
-    B --> C[API调用]
-    C --> D[业务逻辑]
-    D --> E[数据操作]
-    E --> F[结果返回]
-    F --> G[用户响应]
+    A[User Action] --> B[Frontend Processing]
+    B --> C[API Call]
+    C --> D[Business Logic]
+    D --> E[Data Operation]
+    E --> F[Result Return]
+    F --> G[User Response]
 
     style A fill:#e1f5ff
     style G fill:#e1f5ff
     style D fill:#fff4e1
 ```
 
-### 关键路径追踪
+### Key Path Tracing
 
-1. **入口点**: `[文件:行号]` - 函数 `main()` 或 `handler()`
-2. **处理流程**:
-   - 步骤1: `[文件:行号]` - 函数 `step1()`
-   - 步骤2: `[文件:行号]` - 函数 `step2()`
-   - 步骤3: `[文件:行号]` - 函数 `step3()`
-3. **出口点**: `[文件:行号]` - 返回结果
-
----
-
-## 🛡️ 安全性分析
-
-### 安全机制
-
-| 机制类型 | 实现方式 | 保护范围 | 评估 |
-|---------|---------|---------|------|
-| 认证 | | | |
-| 授权 | | | |
-| 数据加密 | | | |
-| 输入验证 | | | |
-
-### 潜在安全风险
-
-- [ ] 风险1：[描述]
-- [ ] 风险2：[描述]
-- [ ] 风险3：[描述]
-
-### 安全最佳实践
-
-- [ ] [实践1]
-- [ ] [实践2]
-- [ ] [实践3]
+1. **Entry Point**: `[file:line]` - Function `main()` or `handler()`
+2. **Processing Flow**:
+   - Step 1: `[file:line]` - Function `step1()`
+   - Step 2: `[file:line]` - Function `step2()`
+   - Step 3: `[file:line]` - Function `step3()`
+3. **Exit Point**: `[file:line]` - Return result
 
 ---
 
-## ⚡ 性能分析
+## 🛡️ Security Analysis
 
-### 性能特征
+### Security Mechanisms
 
-| 指标 | 表现 | 瓶颈 | 优化空间 |
-|------|------|------|---------|
-| 响应时间 | | | |
-| 吞吐量 | | | |
-| 资源消耗 | | | |
-| 并发能力 | | | |
+| Mechanism Type | Implementation | Protection Scope | Assessment |
+|---------------|----------------|------------------|------------|
+| Authentication | | | |
+| Authorization | | | |
+| Data Encryption | | | |
+| Input Validation | | | |
 
-### 性能优化机制
+### Potential Security Risks
+
+- [ ] Risk 1: [Description]
+- [ ] Risk 2: [Description]
+- [ ] Risk 3: [Description]
+
+### Security Best Practices
+
+- [ ] [Practice 1]
+- [ ] [Practice 2]
+- [ ] [Practice 3]
+
+---
+
+## ⚡ Performance Analysis
+
+### Performance Characteristics
+
+| Metric | Performance | Bottleneck | Optimization Potential |
+|--------|-------------|------------|----------------------|
+| Response Time | | | |
+| Throughput | | | |
+| Resource Consumption | | | |
+| Concurrency Capacity | | | |
+
+### Performance Optimization Mechanisms
 
 ```mermaid
 graph LR
-    A[性能优化策略] --> B[缓存机制]
-    A --> C[连接池]
-    A --> D[异步处理]
-    A --> E[数据分片]
+    A[Performance Optimization Strategy] --> B[Caching Mechanism]
+    A --> C[Connection Pool]
+    A --> D[Async Processing]
+    A --> E[Data Sharding]
 
-    B --> F[提升响应速度]
+    B --> F[Improve Response Speed]
     C --> F
-    D --> G[提高吞吐量]
+    D --> G[Increase Throughput]
     E --> G
 ```
 
-### 性能瓶颈
+### Performance Bottlenecks
 
-1. **瓶颈1**: [描述] - 位置：`[文件:行号]`
-2. **瓶颈2**: [描述] - 位置：`[文件:行号]`
-3. **优化建议**: [建议]
+1. **Bottleneck 1**: [Description] - Location: `[file:line]`
+2. **Bottleneck 2**: [Description] - Location: `[file:line]`
+3. **Optimization Suggestions**: [Suggestions]
 
 ---
 
-## 🧪 测试策略分析
+## 🧪 Testing Strategy Analysis
 
-### 测试覆盖
+### Test Coverage
 
-| 测试类型 | 覆盖范围 | 工具/框架 | 评估 |
-|---------|---------|----------|------|
-| 单元测试 | | | |
-| 集成测试 | | | |
-| 端到端测试 | | | |
-| 性能测试 | | | |
-| 安全测试 | | | |
+| Test Type | Coverage Scope | Tools/Frameworks | Assessment |
+|----------|----------------|------------------|------------|
+| Unit Tests | | | |
+| Integration Tests | | | |
+| End-to-End Tests | | | |
+| Performance Tests | | | |
+| Security Tests | | | |
 
-### 测试架构
+### Testing Architecture
 
 ```mermaid
 graph TB
-    subgraph "测试层次"
-        A[单元测试]
-        B[集成测试]
-        C[系统测试]
+    subgraph "Test Levels"
+        A[Unit Tests]
+        B[Integration Tests]
+        C[System Tests]
     end
 
-    subgraph "测试支持"
-        D[Mock工具]
-        E[测试数据]
-        F[测试环境]
+    subgraph "Test Support"
+        D[Mock Tools]
+        E[Test Data]
+        F[Test Environment]
     end
 
     A --> D
@@ -550,39 +550,39 @@ graph TB
     C --> F
 ```
 
-### 关键测试场景
+### Key Test Scenarios
 
-- **场景1**: [描述]
-  - 测试用例：`path/to/test_file`
-  - 覆盖函数：`functionName()`
+- **Scenario 1**: [Description]
+  - Test case: `path/to/test_file`
+  - Covered function: `functionName()`
 
-- **场景2**: [描述]
-  - 测试用例：`path/to/test_file`
-  - 覆盖函数：`functionName()`
+- **Scenario 2**: [Description]
+  - Test case: `path/to/test_file`
+  - Covered function: `functionName()`
 
 ---
 
-## 🔧 实战配置示例
+## 🔧 Practical Configuration Examples
 
-### 配置文件示例
+### Configuration File Examples
 
 ```yaml
-# 示例配置
+# Example configuration
 key1: value1
 key2: value2
 section:
   item1: value3
 ```
 
-### 部署架构
+### Deployment Architecture
 
 ```mermaid
 graph TB
-    subgraph "生产环境"
-        A[负载均衡]
-        B[应用实例1]
-        C[应用实例2]
-        D[(数据库)]
+    subgraph "Production Environment"
+        A[Load Balancer]
+        B[App Instance 1]
+        C[App Instance 2]
+        D[(Database)]
     end
 
     A --> B
@@ -593,49 +593,49 @@ graph TB
 
 ---
 
-## 🚨 故障排查指南
+## 🚨 Troubleshooting Guide
 
-### 常见问题
+### Common Issues
 
-| 问题 | 症状 | 原因 | 解决方案 |
-|------|------|------|---------|
+| Issue | Symptoms | Cause | Solution |
+|-------|----------|-------|----------|
 | | | | |
 
-### 调试命令
+### Debugging Commands
 
 ```bash
-# 示例调试命令
+# Example debugging commands
 command1 --option
 command2 --debug
 ```
 
-### 日志分析
+### Log Analysis
 
-- 日志位置：`path/to/logs`
-- 关键日志格式：[示例格式]
-- 日志级别配置：[配置说明]
+- Log location: `path/to/logs`
+- Key log format: [Example format]
+- Log level configuration: [Configuration description]
 
 ---
 
-### 总结更新部分
+### Summary Update Section
 
-### 可选补充图表
+### Optional Supplementary Diagrams
 
-#### 状态转换图（如果适用）
+#### State Transition Diagram (if applicable)
 
 ```mermaid
 stateDiagram-v2
-    [*] --> 初始化
-    初始化 --> 运行中
-    运行中 --> 暂停: 用户暂停
-    运行中 --> 错误: 异常
-    暂停 --> 运行中: 用户恢复
-    错误 --> 运行中: 重试成功
-    错误 --> [*]: 放弃
-    运行中 --> [*]: 完成
+    [*] --> Initialization
+    Initialization --> Running
+    Running --> Paused: User pause
+    Running --> Error: Exception
+    Paused --> Running: User resume
+    Error --> Running: Retry successful
+    Error --> [*]: Give up
+    Running --> [*]: Completed
 ```
 
-#### 数据库 ER 图（如果适用）
+#### Database ER Diagram (if applicable)
 
 ```mermaid
 erDiagram
@@ -662,7 +662,7 @@ erDiagram
     }
 ```
 
-#### Git 分支策略（如果适用）
+#### Git Branching Strategy (if applicable)
 
 ```mermaid
 gitGraph
@@ -680,12 +680,12 @@ gitGraph
     merge develop
 ```
 
-**一句话评价：**
+**One-sentence evaluation:**
 
-**是否推荐：** ⭐⭐⭐⭐⭐ / 5
+**Recommendation:** ⭐⭐⭐⭐⭐ / 5
 
-**使用建议：**
+**Usage recommendations:**
 
 ---
 
-*模板创建时间：2026-03-09*
+*Template creation time: 2026-03-09*

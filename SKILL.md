@@ -11,7 +11,7 @@ This skill provides a systematic approach to analyzing projects with structured 
 
 Use this skill when the user:
 
-- Asks to "analyze" or "review" or "分析" a project
+- Asks to "analyze", "review", or "evaluate" a project
 - Wants to understand the architecture of a codebase
 - Needs a detailed evaluation of a project (local or remote)
 - Requests a project report or summary
@@ -34,31 +34,31 @@ Use this skill when the user:
 
 The analysis follows a **12-step sequential process** with progress reporting:
 
-1. **📋 项目基本信息** (Project Basic Info) - Basic metadata (stars, language, license)
-2. **🏗️ 项目结构** (Project Structure) - Directory structure and module relationships
-3. **🛠️ 技术栈** (Tech Stack) - Dependencies and frameworks
-4. **🎯 核心功能** (Core Features) - Key features with sequence diagram
-5. **🏛️ 架构设计** (Architecture Design) - Architecture patterns with diagrams
-6. **📊 代码质量** (Code Quality) - Code style, testing, complexity
-7. **📚 文档质量** (Documentation Quality) - README, API docs, guides
-8. **📈 项目活跃度** (Project Activity) - Commits, issues, PRs
-9. **✅ 优点/缺点** (Pros/Cons) - Strengths and weaknesses
-10. **🎯 适用场景** (Use Cases) - When to use/not use
-11. **💡 学习价值** (Learning Value) - What's worth learning
-12. **📝 总结** (Summary) - Final verdict
+1. **📋 Project Basic Info** - Basic metadata (language, file count, structure)
+2. **🏗️ Project Structure** - Directory structure and module relationships
+3. **🛠️ Tech Stack** - Dependencies and frameworks
+4. **🎯 Core Features** - Key features with sequence diagram
+5. **🏛️ Architecture Design** - Architecture patterns with diagrams
+6. **📊 Code Quality** - Code style, testing, complexity
+7. **📚 Documentation Quality** - README, API docs, guides
+8. **📈 Project Activity** - Commits, issues, PRs (from git if available)
+9. **✅ Pros/Cons** - Strengths and weaknesses
+10. **🎯 Use Cases** - When to use/not use
+11. **💡 Learning Value** - What's worth learning
+12. **📝 Summary** - Final verdict
 
 ## Advanced Deep-Dive Analysis Mode
 
-For complex or technical projects, enable **深度分析模式** which adds:
+For complex or technical projects, enable **Deep Analysis Mode** which adds:
 
-13. **🔧 源码深度分析** (Source Code Deep Dive) - Key code paths, function call chains
-14. **⚙️ 实现机制剖析** (Implementation Mechanics) - Internal mechanisms and data flows
-15. **🔍 关键组件解析** (Component Analysis) - Deep dive into critical components
-16. **📐 协议与接口分析** (Protocol & Interface Analysis) - API contracts and protocols
-17. **🚀 工作流程追踪** (Workflow Tracing) - End-to-end flow analysis
-18. **🛡️ 安全性分析** (Security Analysis) - Security mechanisms and vulnerabilities
-19. **⚡ 性能分析** (Performance Analysis) - Performance bottlenecks and optimizations
-20. **🧪 测试策略分析** (Testing Strategy) - Testing approaches and coverage
+13. **🔧 Source Code Deep Dive** - Key code paths, function call chains
+14. **⚙️ Implementation Mechanics** - Internal mechanisms and data flows
+15. **🔍 Component Analysis** - Deep dive into critical components
+16. **📐 Protocol & Interface Analysis** - API contracts and protocols
+17. **🚀 Workflow Tracing** - End-to-end flow analysis
+18. **🛡️ Security Analysis** - Security mechanisms and vulnerabilities
+19. **⚡ Performance Analysis** - Performance bottlenecks and optimizations
+20. **🧪 Testing Strategy Analysis** - Testing approaches and coverage
 
 ## Analysis Process
 
@@ -68,7 +68,11 @@ For complex or technical projects, enable **深度分析模式** which adds:
 2. **Create analysis directory** at `[project-path]/ai-analysis-docs/`
    - **Important**: Analysis documents are saved INSIDE the project being analyzed
    - Example: `/Users/ccc/work/todo/kubernetes/ai-analysis-docs/`
-3. **Gather project info** using:
+3. **Create TODO list** using the template from `CHANGELOG_TEMPLATE.md`
+   - Create `analysis-todo.md` with all planned topics
+   - Initialize all topics with "Not Started" status
+   - Set estimated times and priorities for each topic
+4. **Gather project info** using:
 
 **For Local Projects** (Primary):
 - File system analysis: directory structure, file counts
@@ -87,32 +91,34 @@ For complex or technical projects, enable **深度分析模式** which adds:
 
 For **each of the 12 topics**:
 
-1. **Analyze the topic** (collect info, create diagrams as needed)
-2. **Create individual topic document** and save to project's ai-analysis-docs directory
-3. **Update the main analysis file** with findings
-4. **Update changelog.md** with document creation record
-5. **Report progress** to user with format:
+1. **Update analysis-todo.md** - Mark current topic as "In Progress"
+2. **Analyze the topic** (collect info, create diagrams as needed)
+3. **Create individual topic document** and save to project's ai-analysis-docs directory
+4. **Update the main analysis file** with findings
+5. **Update changelog.md** with document creation record
+6. **Update analysis-todo.md** - Mark current topic as "Completed" and update progress statistics
+7. **Report progress** to user with format:
    ```
-   ✅ [Topic Name] 完成 (进度 X/12)
+   ✅ [Topic Name] completed (progress X/12)
 
    [Key findings summary]
 
-   📄 主题文档: [project-name]-[topic-name].md
-   📝 已更新 changelog.md
+   📄 Topic document: [project-name]-[topic-name].md
+   📝 Updated changelog.md and analysis-todo.md
 
-   🔄 继续下一个主题...
+   🔄 Continuing to next topic...
    ```
-6. **Automatically proceed** to next topic immediately (no user confirmation needed)
+8. **Automatically proceed** to next topic immediately (no user confirmation needed)
 
-**重要**: 分析完一个主题后立即汇报，然后主动继续下一个主题，不要等待用户确认。
+**Important**: After completing each topic, report immediately and then automatically continue to the next topic without waiting for user confirmation.
 
 ### Final Step: Complete
 
 After finishing all 12 topics:
 
 1. **Present summary** with key insights
-2. **Show file location**: `[project-path]/ai-analysis-docs/[project-name]-分析.md`
-   - Example: `/Users/ccc/work/todo/kubernetes/ai-analysis-docs/kubernetes-分析.md`
+2. **Show file location**: `[project-path]/ai-analysis-docs/[project-name]-analysis.md`
+   - Example: `/Users/ccc/work/todo/kubernetes/ai-analysis-docs/kubernetes-analysis.md`
 3. **Offer follow-up** (e.g., "Want me to dive deeper into any specific area?")
 
 ## Information Gathering Strategy
@@ -206,14 +212,14 @@ gh api repos/owner/repo/stats/commit_activity
 
 | Topic | Diagram Types | When to Use |
 |-------|--------------|-------------|
-| 项目结构 | Module graph | Always - show dependencies |
-| 技术栈 | Dependency graph | Always - show stack layers |
-| 核心功能 | Sequence diagram | When user flows are clear |
-| 架构设计 | Architecture flowchart | Always - show layers |
-| 架构设计 | Data flow diagram | When data flow is complex |
-| 总结 | State diagram | For FSM/state-based projects |
-| 总结 | ER diagram | For database-heavy projects |
-| 总结 | Git graph | For projects with interesting branching |
+| Project Structure | Module graph | Always - show dependencies |
+| Tech Stack | Dependency graph | Always - show stack layers |
+| Core Features | Sequence diagram | When user flows are clear |
+| Architecture Design | Architecture flowchart | Always - show layers |
+| Architecture Design | Data flow diagram | When data flow is complex |
+| Summary | State diagram | For FSM/state-based projects |
+| Summary | ER diagram | For database-heavy projects |
+| Summary | Git graph | For projects with interesting branching |
 
 ### Example Module Graph:
 ```mermaid
@@ -240,20 +246,20 @@ sequenceDiagram
 Always report after completing each topic:
 
 ```
-✅ [Topic Name] 完成 (进度 X/12)
+✅ [Topic Name] completed (progress X/12)
 
 [2-3 bullet points of key findings]
 
 [Optional: Show a small preview of the section content]
 
-继续下一个主题...
+🔄 Continuing to next topic...
 ```
 
 ## Template Location
 
 - **Analysis template**: `~/.agents/skills/project-analyzer/TEMPLATE.md`
 - **Output directory**: `[project-path]/ai-analysis-docs/` (INSIDE the analyzed project)
-- **Output naming**: `[project-name]-分析.md`
+- **Output naming**: `[project-name]-analysis.md`
 
 ## Important: Document Location
 
@@ -261,8 +267,8 @@ Always report after completing each topic:
 ```
 [project-path]/ai-analysis-docs/
 ├── changelog.md
-├── [project-name]-分析.md
-├── [project-name]-进度追踪.md
+├── [project-name]-analysis.md
+├── [project-name]-progress-tracking.md
 ├── analysis-todo.md
 ├── topics/
 └── assets/
@@ -275,30 +281,30 @@ Always report after completing each topic:
 
 ## Example Response Pattern
 
-When user says "Analyze facebook/react":
+When user says "Analyze /Users/ccc/work/todo/kubernetes":
 
 ```
-开始分析 /Users/ccc/work/todo/kubernetes 项目...
+Starting analysis of /Users/ccc/work/todo/kubernetes project...
 
-📋 正在收集项目信息...
-📋 项目基本信息 完成 (进度 1/12)
-- 主要语言: Go (95%+)
-- 文件总数: 50,000+
-- 项目路径: /Users/ccc/work/todo/kubernetes
+📋 Gathering project information...
+📋 Project Basic Info completed (progress 1/12)
+- Main language: Go (95%+)
+- Total files: 50,000+
+- Project path: /Users/ccc/work/todo/kubernetes
 
-继续下一个主题...
+Continuing to next topic...
 
-🏗️ 项目结构 完成 (进度 2/12)
-- 主要目录: cmd/, pkg/, staging/
-- 核心组件: kube-apiserver, kubelet, kube-proxy
+🏗️ Project Structure completed (progress 2/12)
+- Main directories: cmd/, pkg/, staging/
+- Core components: kube-apiserver, kubelet, kube-proxy
 
-继续下一个主题...
+Continuing to next topic...
 [... continues through all 12 topics ...]
 
-✅ 分析完成！
-分析文件已保存: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/kubernetes-分析.md
+✅ Analysis completed!
+Analysis documents saved: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/kubernetes-analysis.md
 
-想深入了解哪个部分吗？
+Would you like to dive deeper into any specific area?
 ```
 
 ## Important Notes
@@ -316,31 +322,32 @@ When user says "Analyze facebook/react":
 
 ## Analysis Behavior Guidelines
 
-### 当用户要求分析时：
-1. **立即开始分析** - 不需要确认或询问
-2. **逐个主题完成** - 每个主题完成后立即汇报
-3. **主动继续** - 汇报后自动开始下一个主题
-4. **完整完成** - 除非用户说"停止"，否则完成所有主题
+### When user requests analysis:
+1. **Start immediately** - no confirmation or questions needed
+2. **Complete topic by topic** - report after each topic completion
+3. **Continue automatically** - automatically start next topic after reporting
+4. **Complete fully** - finish all topics unless user says "stop"
 
-### 汇报格式：
+### Reporting Format:
 ```
-✅ [主题名称] 完成 (进度 X/12)
+✅ [Topic Name] completed (progress X/12)
 
-关键发现：
-• 发现1
-• 发现2
-• 发现3
+Key findings:
+• Finding 1
+• Finding 2
+• Finding 3
 
-📄 主题文档: [文件路径]
+📄 Topic document: [file path]
+📝 Updated changelog.md
 
-🔄 继续下一个主题...
+🔄 Continuing to next topic...
 ```
 
-### 用户体验：
-- 用户可以看到实时进度
-- 每个主题完成都有明确反馈
-- 不需要频繁交互，分析自动进行
-- 用户可以随时说"停止"来中断分析
+### User Experience:
+- Users can see real-time progress
+- Clear feedback after each topic completion
+- No frequent interaction needed, analysis proceeds automatically
+- Users can say "stop" at any time to interrupt the analysis
 
 ## Incremental Documentation Strategy
 
@@ -351,16 +358,16 @@ Each analysis generates multiple files:
 ```
 [project-name]/
 └── ai-analysis-docs/                 # All analysis documents in one place
-    ├── changelog.md                 # Analysis changelog (NEW!)
-    ├── [project-name]-分析.md       # Main consolidated report
-    ├── [project-name]-进度追踪.md   # Progress tracking
-    ├── analysis-todo.md             # Analysis TODO list
+    ├── analysis-todo.md             # Analysis TODO list (created in Step 0)
+    ├── changelog.md                 # Analysis changelog (updated throughout)
+    ├── [project-name]-analysis.md   # Main consolidated report
+    ├── [project-name]-progress-tracking.md   # Progress tracking
     ├── topics/                      # Individual topic documents
-    │   ├── 01-项目基本信息.md
-    │   ├── 02-项目结构.md
-    │   ├── 03-技术栈.md
+    │   ├── 01-project-basic-info.md
+    │   ├── 02-project-structure.md
+    │   ├── 03-tech-stack.md
     │   ├── ...
-    │   └── 20-测试策略分析.md       # For deep-dive mode
+    │   └── 20-testing-strategy-analysis.md   # For deep-dive mode
     └── assets/                      # Diagrams and images
         ├── architecture-diagram.md
         └── flowcharts/
@@ -373,32 +380,32 @@ Each individual topic document follows this structure:
 ```markdown
 # [Topic Name] - [Project Name]
 
-## 📋 主题概览
-- **分析主题**: [Topic Name]
-- **项目**: [Project Name]
-- **分析时间**: [Timestamp]
-- **分析状态**: ✅ 已完成
+## 📋 Topic Overview
+- **Analysis Topic**: [Topic Name]
+- **Project**: [Project Name]
+- **Analysis Time**: [Timestamp]
+- **Analysis Status**: ✅ Completed
 
-## 🔍 分析内容
+## 🔍 Analysis Content
 
 [Detailed analysis content for this specific topic]
 
-## 📊 关键发现
+## 📊 Key Findings
 
 - [Key finding 1]
 - [Key finding 2]
 - [Key finding 3]
 
-## 🔗 相关资源
+## 🔗 Related Resources
 
-- 源码位置: [file:line]
-- 参考文档: [links]
-- 相关主题: [links to other topic documents]
+- Source location: [file:line]
+- Reference docs: [links]
+- Related topics: [links to other topic documents]
 
 ---
 
-*本文档由 project-analyzer skill 自动生成*
-*生成时间: [timestamp]*
+*This document was auto-generated by project-analyzer skill*
+*Generated at: [timestamp]*
 ```
 
 ## Deep Code Analysis Methodology (Advanced)
@@ -406,20 +413,20 @@ Each individual topic document follows this structure:
 When conducting source code deep dives, follow this systematic approach:
 
 ### Analysis Principles
-1. **从架构到实现** (From Architecture to Implementation): Understand overall architecture first, then dive into code
-2. **流程驱动** (Flow-Driven): Trace through actual workflows to understand code paths
-3. **图文并茂** (Visual + Code): Combine Mermaid diagrams with code annotations
-4. **可延续性** (Continuable): Provide guides for continued analysis
-5. **实战导向** (Practice-Oriented): Include configuration examples and troubleshooting
+1. **From Architecture to Implementation**: Understand overall architecture first, then dive into code
+2. **Flow-Driven**: Trace through actual workflows to understand code paths
+3. **Visual + Code**: Combine Mermaid diagrams with code annotations
+4. **Continuable**: Provide guides for continued analysis
+5. **Practice-Oriented**: Include configuration examples and troubleshooting
 
 ### Code Analysis Structure
-- **资源结构详解**: Source code locations, core type definitions, field explanations
-- **工作原理**: Architecture diagrams, key mechanisms, data flow processes
-- **源码深度分析**: Key code paths, function call chains, implementation details
-- **实现对比**: Comparison of different implementations, pros/cons, use cases
-- **配置和实践**: Configuration examples, best practices, performance optimization
-- **监控和可观测性**: Metrics, logging, monitoring solutions
-- **故障排查**: Common issues, troubleshooting steps, debugging commands
+- **Resource Structure Details**: Source code locations, core type definitions, field explanations
+- **Working Principles**: Architecture diagrams, key mechanisms, data flow processes
+- **Source Code Deep Analysis**: Key code paths, function call chains, implementation details
+- **Implementation Comparison**: Comparison of different implementations, pros/cons, use cases
+- **Configuration and Practice**: Configuration examples, best practices, performance optimization
+- **Monitoring and Observability**: Metrics, logging, monitoring solutions
+- **Troubleshooting**: Common issues, troubleshooting steps, debugging commands
 
 ### Progressive Analysis Workflow
 1. **Entry Point Analysis**: Identify main entry points (main functions, API endpoints)
@@ -430,12 +437,6 @@ When conducting source code deep dives, follow this systematic approach:
 6. **State Management**: Analyze how state is managed and transitions occur
 7. **Error Handling**: Review error handling and recovery mechanisms
 8. **Extension Points**: Identify plugin systems, hooks, or extension mechanisms
-
-## Related Skills
-
-- `github` - For GitHub API access and repository data
-- `pretty-mermaid` - For advanced Mermaid diagram rendering
-- `coding-router` - For deeper code architecture analysis
 
 ## Analysis Triggers
 
@@ -461,3 +462,9 @@ Use when user asks for:
 - "brief analysis of [project]"
 - "should I use [project]"
 - Basic project evaluation (steps 1,3,4,9,10,12 only)
+
+## Related Skills
+
+- `github` - For GitHub API access and repository data
+- `pretty-mermaid` - For advanced Mermaid diagram rendering
+- `coding-router` - For deeper code architecture analysis
