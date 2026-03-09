@@ -113,16 +113,135 @@ git clone https://github.com/[your-username]/project-analyzer ~/.agents/skills/p
 
 ```
 project-analyzer/
-├── SKILL.md                    # Skill definition and usage guide
-├── TEMPLATE.md                 # Analysis template (standard + deep analysis)
-├── CHANGELOG_TEMPLATE.md       # Change log template ✨
-├── WORKFLOW.md                 # Progressive analysis workflow
-├── DOCUMENTATION_GUIDELINES.md # Documentation organization standards and naming conventions
-├── EXAMPLE_WORKFLOW.md         # Progressive documentation creation examples
-├── INTEGRATION_SUMMARY.md      # Kubernetes analysis methodology integration summary
-├── README.md                   # This file
+├── SKILL.md                    # 👨‍💻 Main skill definition - orchestrates the entire analysis process
+├── TEMPLATE.md                 # 📋 Analysis template - used in Step 0 to define structure
+├── CHANGELOG_TEMPLATE.md       # 📝 Changelog template - used in Step 0 to create TODO list
+├── WORKFLOW.md                 # 🔄 Progressive workflow guide - provides deep-dive methodology
+├── DOCUMENTATION_GUIDELINES.md # 📚 Documentation standards - defines file organization rules
+├── PATH_GUIDE.md              # 🛣️ Path storage guide - ensures correct document locations
+├── EXAMPLE_WORKFLOW.md         # 🎯 Usage examples - demonstrates complete analysis flow
+├── INTEGRATION_SUMMARY.md      # 🎉 Integration summary - records Kubernetes methodology
+├── README.md                   # 📖 This file - project overview and quick start
 └── .gitignore
 ```
+
+## Documentation Usage Guide
+
+### How Supporting Documents Work Together
+
+The project-analyzer skill uses a comprehensive documentation system where each file serves a specific purpose:
+
+#### 🎯 **Core Execution Files**
+
+**SKILL.md** - The main orchestration file
+- **When used**: During every analysis execution
+- **Purpose**: Coordinates all other files and defines the analysis workflow
+- **Key sections**:
+  - Step 0: Preparation (reads TEMPLATE.md and CHANGELOG_TEMPLATE.md)
+  - Step 1-N: Progressive analysis cycle
+  - Template and guide locations reference
+
+**TEMPLATE.md** - Analysis structure template
+- **When used**: Step 0 - Preparation phase
+- **How used**: `SKILL.md` instructs to read from `~/.agents/skills/project-analyzer/TEMPLATE.md`
+- **Purpose**: Defines all 20 analysis topics (12 standard + 8 deep-dive)
+- **Content**: Topic structure, required information, diagram placeholders
+
+**CHANGELOG_TEMPLATE.md** - TODO and changelog template
+- **When used**: Step 0 - Preparation phase
+- **How used**: `SKILL.md` uses it to create `analysis-todo.md`
+- **Purpose**: Initializes the TODO list with all planned topics
+- **Content**: TODO structure, progress tracking, milestone templates
+
+#### 📚 **Guideline and Reference Files**
+
+**WORKFLOW.md** - Progressive analysis methodology
+- **When used**: Throughout analysis for guidance
+- **Purpose**: Provides systematic deep-dive analysis methods
+- **Key content**:
+  - Progressive analysis strategy (Foundation → Architecture → Ecosystem → Deep Technical)
+  - Code analysis methodology
+  - Quality indicator checklists
+  - Progressive deep-dive steps
+
+**DOCUMENTATION_GUIDELINES.md** - File organization standards
+- **When used**: When creating and organizing analysis documents
+- **Purpose**: Ensures consistent file structure and naming conventions
+- **Key content**:
+  - Directory structure rules
+  - File naming conventions (`XX-[topic-name].md`)
+  - Document templates for each file type
+  - Quality control standards
+
+**PATH_GUIDE.md** - Path storage guide
+- **When used**: Step 0 - Preparation phase and throughout analysis
+- **Purpose**: Ensures all documents are saved in correct locations
+- **Core principle**: "Analysis documents are ALWAYS saved inside the `ai-analysis-docs/` directory of the project being analyzed"
+- **Key content**:
+  - Correct vs incorrect path examples
+  - Path resolution rules
+  - Migration guide for old structures
+
+#### 🎯 **Example and Reference Files**
+
+**EXAMPLE_WORKFLOW.md** - Complete usage demonstration
+- **When used**: As reference for understanding the analysis flow
+- **Purpose**: Shows real-world example using Kubernetes project
+- **Key content**:
+  - Step-by-step execution example
+  - Progress reporting format
+  - Document creation sequence
+  - User experience demonstration
+
+**INTEGRATION_SUMMARY.md** - Methodology documentation
+- **When used**: For understanding the skill's analytical foundation
+- **Purpose**: Documents how Kubernetes analysis methodology was integrated
+- **Key content**:
+  - Five core principles from Kubernetes analysis
+  - Three analysis modes (Quick/Standard/Deep)
+  - Deep analysis capabilities (8 additional topics)
+
+### 🔄 Document Usage Flow
+
+```mermaid
+graph TD
+    A[User: Analyze project] --> B[SKILL.md: Step 0 Preparation]
+    B --> C[Read TEMPLATE.md]
+    B --> D[Use CHANGELOG_TEMPLATE.md]
+    B --> E[Create ai-analysis-docs/ directory]
+
+    C --> F[SKILL.md: Step 1-N Analysis]
+    D --> G[Create analysis-todo.md]
+    E --> H[Follow PATH_GUIDE.md rules]
+
+    F --> I[Reference WORKFLOW.md for methodology]
+    F --> J[Follow DOCUMENTATION_GUIDELINES.md]
+    I --> K[Create topic documents]
+    J --> K
+    H --> K
+
+    K --> L[Update progress tracking]
+    L --> M[Report to user]
+    M --> N[Continue to next topic]
+
+    style A fill:#e1f5ff
+    style B fill:#fff4e1
+    style K fill:#e8f5e9
+    style M fill:#e1f5ff
+```
+
+### 📋 File Reference Summary
+
+| File | Used In Phase | Usage Method | Purpose |
+|------|--------------|--------------|---------|
+| **SKILL.md** | All phases | Main execution orchestration | Coordinates entire analysis process |
+| **TEMPLATE.md** | Step 0 | Read via path reference | Defines analysis structure and topics |
+| **CHANGELOG_TEMPLATE.md** | Step 0 | Template for TODO creation | Initialize analysis planning |
+| **WORKFLOW.md** | All phases | Reference guidance | Provides analysis methodology |
+| **DOCUMENTATION_GUIDELINES.md** | Document creation | Standards compliance | Ensures consistent organization |
+| **PATH_GUIDE.md** | All phases | Path validation | Correct file locations |
+| **EXAMPLE_WORKFLOW.md** | Reference | Learning and understanding | Demonstrates usage patterns |
+| **INTEGRATION_SUMMARY.md** | Reference | Background understanding | Documents analytical foundation |
 
 ## Related Skills
 

@@ -255,9 +255,14 @@ Always report after completing each topic:
 🔄 Continuing to next topic...
 ```
 
-## Template Location
+## Template and Guide Locations
 
 - **Analysis template**: `~/.agents/skills/project-analyzer/TEMPLATE.md`
+- **Changelog template**: `~/.agents/skills/project-analyzer/CHANGELOG_TEMPLATE.md`
+- **Progressive workflow guide**: `~/.agents/skills/project-analyzer/WORKFLOW.md`
+- **Documentation guidelines**: `~/.agents/skills/project-analyzer/DOCUMENTATION_GUIDELINES.md`
+- **Path storage guide**: `~/.agents/skills/project-analyzer/PATH_GUIDE.md`
+- **Usage examples**: `~/.agents/skills/project-analyzer/EXAMPLE_WORKFLOW.md`
 - **Output directory**: `[project-path]/ai-analysis-docs/` (INSIDE the analyzed project)
 - **Output naming**: `[project-name]-analysis.md`
 
@@ -463,8 +468,16 @@ Use when user asks for:
 - "should I use [project]"
 - Basic project evaluation (steps 1,3,4,9,10,12 only)
 
-## Related Skills
+## Related Skills and Resources
 
+### Related Skills
 - `github` - For GitHub API access and repository data
 - `pretty-mermaid` - For advanced Mermaid diagram rendering
 - `coding-router` - For deeper code architecture analysis
+
+### Supporting Documentation
+- `WORKFLOW.md` - Progressive analysis methodology and deep-dive workflows
+- `DOCUMENTATION_GUIDELINES.md` - File organization standards and naming conventions
+- `PATH_GUIDE.md` - Path storage rules and best practices
+- `EXAMPLE_WORKFLOW.md` - Complete usage examples with Kubernetes project
+- `INTEGRATION_SUMMARY.md` - Kubernetes analysis methodology integration details
