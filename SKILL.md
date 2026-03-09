@@ -35,6 +35,19 @@ The analysis follows a **12-step sequential process** with progress reporting:
 11. **💡 学习价值** (Learning Value) - What's worth learning
 12. **📝 总结** (Summary) - Final verdict
 
+## Advanced Deep-Dive Analysis Mode
+
+For complex or technical projects, enable **深度分析模式** which adds:
+
+13. **🔧 源码深度分析** (Source Code Deep Dive) - Key code paths, function call chains
+14. **⚙️ 实现机制剖析** (Implementation Mechanics) - Internal mechanisms and data flows
+15. **🔍 关键组件解析** (Component Analysis) - Deep dive into critical components
+16. **📐 协议与接口分析** (Protocol & Interface Analysis) - API contracts and protocols
+17. **🚀 工作流程追踪** (Workflow Tracing) - End-to-end flow analysis
+18. **🛡️ 安全性分析** (Security Analysis) - Security mechanisms and vulnerabilities
+19. **⚡ 性能分析** (Performance Analysis) - Performance bottlenecks and optimizations
+20. **🧪 测试策略分析** (Testing Strategy) - Testing approaches and coverage
+
 ## Analysis Process
 
 ### Step 0: Preparation
@@ -52,21 +65,28 @@ The analysis follows a **12-step sequential process** with progress reporting:
 For **each of the 12 topics**:
 
 1. **Analyze the topic** (collect info, create diagrams as needed)
-2. **Update the analysis file** with findings
-3. **Report progress** to user with format:
+2. **Create individual topic document** and save to workspace
+3. **Update the main analysis file** with findings
+4. **Report progress** to user with format:
    ```
    ✅ [Topic Name] 完成 (进度 X/12)
 
    [Key findings summary]
+
+   📄 主题文档: [project-name]-[topic-name].md
+
+   🔄 继续下一个主题...
    ```
-4. **Automatically proceed** to next topic (no user confirmation needed)
+5. **Automatically proceed** to next topic immediately (no user confirmation needed)
+
+**重要**: 分析完一个主题后立即汇报，然后主动继续下一个主题，不要等待用户确认。
 
 ### Final Step: Complete
 
 After finishing all 12 topics:
 
 1. **Present summary** with key insights
-2. **Show file location**: `/Users/ccc/.openclaw/workspace/[project-name]-分析.md`
+2. **Show file location**: `/Users/ccc/.openclaw/workspace/[project-name]/ai-analysis-docs/[project-name]-分析.md`
 3. **Offer follow-up** (e.g., "Want me to dive deeper into any specific area?")
 
 ## Information Gathering Strategy
@@ -150,7 +170,7 @@ Always report after completing each topic:
 
 - **Analysis template**: `~/.agents/skills/project-analyzer/TEMPLATE.md`
 - **Backup copy**: `/Users/ccc/.openclaw/workspace/项目分析模版.md` (kept for reference)
-- **Output directory**: `/Users/ccc/.openclaw/workspace/`
+- **Output directory**: `/Users/ccc/.openclaw/workspace/[project-name]/ai-analysis-docs/`
 - **Output naming**: `[project-name]-分析.md`
 
 ## Example Response Pattern
@@ -184,14 +204,159 @@ When user says "Analyze facebook/react":
 ## Important Notes
 
 - **Always complete all 12 topics** - don't stop early unless user says "stop"
-- **Save after each topic** - incremental saves prevent data loss
+- **Report after each topic** - immediately inform user when each topic is done
+- **Continue automatically** - proceed to next topic without waiting for user confirmation
+- **Create individual topic documents** - each topic gets its own markdown file
+- **Save incrementally** - create and save each topic document immediately after analysis
+- **Update main document** - consolidate all findings into the main analysis file
 - **Use mermaid diagrams** where appropriate - they add significant value
 - **Be specific** - avoid generic comments, provide concrete details
 - **Cite sources** - mention where info came from (GitHub, docs, etc.)
 - **Template-driven** - follow the template structure closely
+
+## Analysis Behavior Guidelines
+
+### 当用户要求分析时：
+1. **立即开始分析** - 不需要确认或询问
+2. **逐个主题完成** - 每个主题完成后立即汇报
+3. **主动继续** - 汇报后自动开始下一个主题
+4. **完整完成** - 除非用户说"停止"，否则完成所有主题
+
+### 汇报格式：
+```
+✅ [主题名称] 完成 (进度 X/12)
+
+关键发现：
+• 发现1
+• 发现2
+• 发现3
+
+📄 主题文档: [文件路径]
+
+🔄 继续下一个主题...
+```
+
+### 用户体验：
+- 用户可以看到实时进度
+- 每个主题完成都有明确反馈
+- 不需要频繁交互，分析自动进行
+- 用户可以随时说"停止"来中断分析
+
+## Incremental Documentation Strategy
+
+### File Organization
+
+Each analysis generates multiple files:
+
+```
+[project-name]/
+└── ai-analysis-docs/                 # All analysis documents in one place
+    ├── [project-name]-分析.md       # Main consolidated report
+    ├── [project-name]-进度追踪.md   # Progress tracking
+    ├── analysis-todo.md             # Analysis TODO list
+    ├── topics/                      # Individual topic documents
+    │   ├── 01-项目基本信息.md
+    │   ├── 02-项目结构.md
+    │   ├── 03-技术栈.md
+    │   ├── ...
+    │   └── 20-测试策略分析.md       # For deep-dive mode
+    └── assets/                      # Diagrams and images
+        ├── architecture-diagram.md
+        └── flowcharts/
+```
+
+### Topic Document Template
+
+Each individual topic document follows this structure:
+
+```markdown
+# [Topic Name] - [Project Name]
+
+## 📋 主题概览
+- **分析主题**: [Topic Name]
+- **项目**: [Project Name]
+- **分析时间**: [Timestamp]
+- **分析状态**: ✅ 已完成
+
+## 🔍 分析内容
+
+[Detailed analysis content for this specific topic]
+
+## 📊 关键发现
+
+- [Key finding 1]
+- [Key finding 2]
+- [Key finding 3]
+
+## 🔗 相关资源
+
+- 源码位置: [file:line]
+- 参考文档: [links]
+- 相关主题: [links to other topic documents]
+
+---
+
+*本文档由 project-analyzer skill 自动生成*
+*生成时间: [timestamp]*
+```
+
+## Deep Code Analysis Methodology (Advanced)
+
+When conducting source code deep dives, follow this systematic approach:
+
+### Analysis Principles
+1. **从架构到实现** (From Architecture to Implementation): Understand overall architecture first, then dive into code
+2. **流程驱动** (Flow-Driven): Trace through actual workflows to understand code paths
+3. **图文并茂** (Visual + Code): Combine Mermaid diagrams with code annotations
+4. **可延续性** (Continuable): Provide guides for continued analysis
+5. **实战导向** (Practice-Oriented): Include configuration examples and troubleshooting
+
+### Code Analysis Structure
+- **资源结构详解**: Source code locations, core type definitions, field explanations
+- **工作原理**: Architecture diagrams, key mechanisms, data flow processes
+- **源码深度分析**: Key code paths, function call chains, implementation details
+- **实现对比**: Comparison of different implementations, pros/cons, use cases
+- **配置和实践**: Configuration examples, best practices, performance optimization
+- **监控和可观测性**: Metrics, logging, monitoring solutions
+- **故障排查**: Common issues, troubleshooting steps, debugging commands
+
+### Progressive Analysis Workflow
+1. **Entry Point Analysis**: Identify main entry points (main functions, API endpoints)
+2. **Data Structure Mapping**: Understand core data structures and their relationships
+3. **Control Flow Tracing**: Follow execution paths through the codebase
+4. **Dependency Analysis**: Map dependencies between modules and components
+5. **Interface Analysis**: Understand API contracts and communication patterns
+6. **State Management**: Analyze how state is managed and transitions occur
+7. **Error Handling**: Review error handling and recovery mechanisms
+8. **Extension Points**: Identify plugin systems, hooks, or extension mechanisms
 
 ## Related Skills
 
 - `github` - For GitHub API access and repository data
 - `pretty-mermaid` - For advanced Mermaid diagram rendering
 - `coding-router` - For deeper code architecture analysis
+
+## Analysis Triggers
+
+### Standard Analysis Mode (12 steps)
+Use when user asks for:
+- "analyze [project]"
+- "review [project]"
+- "evaluate [project]"
+- General project understanding
+
+### Deep-Dive Mode (20 steps)
+Use when user asks for:
+- "deep dive into [project]"
+- "source code analysis of [project]"
+- "how does [project] work internally"
+- "implementation details of [project]"
+- Technical architecture evaluation
+- Performance/security analysis requirements
+
+### Quick Assessment Mode (6 steps)
+Use when user asks for:
+- "quick overview of [project]"
+- "brief analysis of [project]"
+- "should I use [project]"
+- Basic project evaluation (steps 1,3,4,9,10,12 only)
