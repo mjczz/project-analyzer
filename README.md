@@ -14,6 +14,8 @@ A comprehensive open source project analysis skill for OpenClaw agents.
 - 🔄 **Real-time Progress Tracking**: View analysis progress and status at any time
 - 📝 **Change Log Recording**: Automatically record all document creation activities
 - 💾 **Incremental Save Mechanism**: Prevent data loss and ensure content safety
+- 🫀 **Heartbeat Detection**: OpenClaw memory-based progress tracking prevents analysis interruption
+- 🔄 **Resume Capability**: Automatically recover from interruptions and continue analysis
 - 🎯 Systematic analysis framework based on Kubernetes analysis methodology
 
 ## Use Cases

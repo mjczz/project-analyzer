@@ -64,15 +64,19 @@ For complex or technical projects, enable **Deep Analysis Mode** which adds:
 
 ### Step 0: Preparation
 
-1. **Read the template** from `~/.agents/skills/project-analyzer/TEMPLATE.md`
-2. **Create analysis directory** at `[project-path]/ai-analysis-docs/`
+1. **Initialize Heartbeat Detection** - Create memory-based progress tracking
+   - Write analysis start status to OpenClaw memory: `memory/YYYY-MM-DD.md`
+   - Record current project path, analysis mode, and start timestamp
+   - This prevents analysis interruption and enables resume capability
+2. **Read the template** from `~/.agents/skills/project-analyzer/TEMPLATE.md`
+3. **Create analysis directory** at `[project-path]/ai-analysis-docs/`
    - **Important**: Analysis documents are saved INSIDE the project being analyzed
    - Example: `/Users/ccc/work/todo/kubernetes/ai-analysis-docs/`
-3. **Create TODO list** using the template from `CHANGELOG_TEMPLATE.md`
+4. **Create TODO list** using the template from `CHANGELOG_TEMPLATE.md`
    - Create `analysis-todo.md` with all planned topics
    - Initialize all topics with "Not Started" status
    - Set estimated times and priorities for each topic
-4. **Gather project info** using:
+5. **Gather project info** using:
 
 **For Local Projects** (Primary):
 - File system analysis: directory structure, file counts
@@ -91,7 +95,10 @@ For complex or technical projects, enable **Deep Analysis Mode** which adds:
 
 For **each of the 12 topics**:
 
-1. **Report starting** to user with format:
+1. **Update Heartbeat** - Write progress to OpenClaw memory
+   - Update `memory/YYYY-MM-DD.md` with current topic and progress
+   - This ensures analysis can resume if interrupted
+2. **Report starting** to user with format:
    ```
    🔵 [Topic Name] started (progress X/12)
 
@@ -100,21 +107,22 @@ For **each of the 12 topics**:
 
    🔄 Starting analysis...
    ```
-2. **Update analysis-todo.md** - Mark current topic as "In Progress"
-3. **Analyze the topic** (collect info, create diagrams as needed)
-4. **Create individual topic document** and save to project's ai-analysis-docs directory
+3. **Update analysis-todo.md** - Mark current topic as "In Progress"
+4. **Analyze the topic** (collect info, create diagrams as needed)
+5. **Create individual topic document** and save to project's ai-analysis-docs directory
    - **🎉 File creation feedback**: Immediately report when file is created
    - Format: `📄 Created: [file-path]`
-5. **Update the main analysis file** with findings
+6. **Update the main analysis file** with findings
    - **📝 File update feedback**: Report when main file is updated
    - Format: `🔄 Updated: [main-analysis-file]`
-6. **Update changelog.md** with document creation record
+7. **Update changelog.md** with document creation record
    - **📋 Changelog feedback**: Report changelog update
    - Format: `📋 Updated: changelog.md`
-7. **Update analysis-todo.md** - Mark current topic as "Completed" and update progress statistics
+8. **Update analysis-todo.md** - Mark current topic as "Completed" and update progress statistics
    - **✅ Progress feedback**: Report progress update
    - Format: `📊 Updated: analysis-todo.md (progress X/12)`
-8. **Report completion** to user with format:
+9. **Update Heartbeat** - Write completion to memory and mark topic complete
+10. **Report completion** to user with format:
    ```
    ✅ [Topic Name] completed (progress X/12)
 
@@ -128,7 +136,7 @@ For **each of the 12 topics**:
 
    🔄 Continuing to next topic...
    ```
-9. **Automatically proceed** to next topic immediately (no user confirmation needed)
+11. **Automatically proceed** to next topic immediately (no user confirmation needed)
 
 **Important**:
 1. Always report when STARTING each topic analysis
@@ -140,10 +148,13 @@ For **each of the 12 topics**:
 
 After finishing all 12 topics:
 
-1. **Present summary** with key insights
-2. **Show file location**: `[project-path]/ai-analysis-docs/[project-name]-analysis.md`
+1. **Update Heartbeat** - Mark analysis as complete in memory
+   - Write completion status to `memory/YYYY-MM-DD.md`
+   - Clear active analysis flag to prevent resume attempts
+2. **Present summary** with key insights
+3. **Show file location**: `[project-path]/ai-analysis-docs/[project-name]-analysis.md`
    - Example: `/Users/ccc/work/todo/kubernetes/ai-analysis-docs/kubernetes-analysis.md`
-3. **Offer follow-up** (e.g., "Want me to dive deeper into any specific area?")
+4. **Offer follow-up** (e.g., "Want me to dive deeper into any specific area?")
 
 ## Information Gathering Strategy
 
