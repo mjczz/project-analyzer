@@ -2,25 +2,26 @@
 
 本文档展示如何使用 project-analyzer skill 进行渐进式分析，每个主题都创建独立文档。
 
-## 🎯 分析示例：分析 Express.js 项目
+## 🎯 分析示例：分析本地 Kubernetes 项目
 
-当用户说 "分析 expressjs/express" 时，skill 将执行以下流程：
+当用户说 "分析 /Users/ccc/work/todo/kubernetes" 时，skill 将执行以下流程：
 
 ### 📋 初始化阶段
 
 ```
-🔍 开始分析 expressjs/express 项目...
+🔍 开始分析本地 Kubernetes 项目...
 
 📁 创建项目目录结构:
-/Users/ccc/.openclaw/workspace/express/ai-analysis-docs/
-├── express-分析.md
-├── express-进度追踪.md
+/Users/ccc/work/todo/kubernetes/ai-analysis-docs/
+├── kubernetes-分析.md
+├── kubernetes-进度追踪.md
 ├── analysis-todo.md
 ├── topics/
 └── assets/
 
 📊 分析模式: 标准分析 (12主题)
 🎯 开始时间: 2026-03-09 14:30:00
+📍 项目路径: /Users/ccc/work/todo/kubernetes
 ```
 
 ---
@@ -28,30 +29,36 @@
 ### ✅ 主题 1：项目基本信息
 
 **分析阶段**:
-- 收集 GitHub 数据：stars, forks, 语言等
-- 获取项目描述和许可信息
+- 分析本地文件系统：文件数量、目录结构
+- 检测主要编程语言：Go 文件统计
+- 分析 README 文件和项目描述
+- 检查许可证文件
 
 **保存阶段**:
 ```
-💾 创建文档: /Users/ccc/.openclaw/workspace/express/ai-analysis-docs/topics/01-项目基本信息.md
+💾 创建文档: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/topics/01-项目基本信息.md
 ```
 
 **更新阶段**:
-- 更新 `express-进度追踪.md`：标记主题1为完成
+- 更新 `kubernetes-进度追踪.md`：标记主题1为完成
 - 更新 `analysis-todo.md`：更新进度状态
-- 更新 `express-分析.md`：添加项目基本信息章节
+- 更新 `kubernetes-分析.md`：添加项目基本信息章节
+- 更新 `changelog.md`：记录文档创建活动
 
 **汇报阶段**:
 ```
 ✅ 项目基本信息 完成 (进度 1/12)
 
 关键发现:
-• Stars: 63,000+
-• Language: JavaScript
-• License: MIT
-• 描述: Fast, unopinionated, minimalist web framework
+• 项目: Kubernetes (容器编排系统)
+• 主要语言: Go (95%+)
+• 文件总数: 50,000+
+• 代码行数: 300万+ 行
+• 许可证: Apache 2.0
+• 项目类型: 本地项目
 
 📄 主题文档: topics/01-项目基本信息.md
+📝 已更新 changelog.md
 
 🔄 继续下一个主题...
 ```
@@ -63,30 +70,34 @@
 ### ✅ 主题 2：项目结构
 
 **分析阶段**:
-- 分析目录结构
-- 识别主要模块和组件
-- 创建模块关系图
+- 分析本地目录结构：cmd/, pkg/, staging/
+- 识别主要模块：kube-apiserver, kubelet, kube-proxy
+- 创建组件关系图
+- 统计各目录代码量
 
 **保存阶段**:
 ```
-💾 创建文档: /Users/ccc/.openclaw/workspace/express/ai-analysis-docs/topics/02-项目结构.md
+💾 创建文档: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/topics/02-项目结构.md
 ```
 
 **更新阶段**:
 - 更新进度追踪：标记主题2为完成
 - 更新 analysis-todo.md：更新进度状态
 - 更新主报告：添加项目结构章节
+- 更新 changelog.md：记录主题2完成
 
 **汇报阶段**:
 ```
 ✅ 项目结构 完成 (进度 2/12)
 
 关键发现:
-• 主要目录: lib/, test/, examples/
-• 核心模块: express.js, application.js, router.js
-• 中间件架构模式
+• 主要目录: cmd/ (组件), pkg/ (核心逻辑), staging/ (外部依赖)
+• 核心组件: kube-apiserver, kube-controller-manager, kube-scheduler
+• 控制平面组件: 8+ 个核心服务
+• 代码组织: 清晰的模块化架构
 
 📄 主题文档: topics/02-项目结构.md
+📝 已更新 changelog.md
 
 🔄 继续下一个主题...
 ```
@@ -98,13 +109,14 @@
 ### ✅ 主题 3：技术栈
 
 **分析阶段**:
-- 检查 package.json 依赖
-- 分析技术栈组成
-- 创建依赖关系图
+- 分析 go.mod 依赖关系
+- 检查构建工具：Makefile, build脚本
+- 分析测试框架和工具
+- 识别外部依赖和接口
 
 **保存阶段**:
 ```
-💾 创建文档: /Users/ccc/.openclaw/workspace/express/ai-analysis-docs/topics/03-技术栈.md
+💾 创建文档: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/topics/03-技术栈.md
 ```
 
 **汇报阶段**:
@@ -112,11 +124,14 @@
 ✅ 技术栈 完成 (进度 3/12)
 
 关键发现:
-• 核心依赖: router, send-image, type-is
-• 测试框架: mocha, chai
-• 主要工具: eslint, nyc
+• 主要语言: Go 1.25+
+• 核心依赖: etcd, containerd, gRPC
+• 构建工具: make, Docker, go build
+• 测试框架: go test, ginkgo, gomega
+• API 生成: etcd, protobuf, openapi
 
 📄 主题文档: topics/03-技术栈.md
+📝 已更新 changelog.md
 
 🔄 继续下一个主题...
 ```
@@ -136,33 +151,34 @@
 ### 文档结构
 
 ```
-express/
+kubernetes/
 └── ai-analysis-docs/                  # 所有分析文档统一存放
-    ├── express-分析.md                # 主报告 (整合所有发现)
-    ├── express-进度追踪.md            # 进度追踪 (12/12 ✅)
-    ├── analysis-todo.md              # 分析待办清单
+    ├── changelog.md                   # 分析变更日志 ✨
+    ├── kubernetes-分析.md             # 主报告 (整合所有发现)
+    ├── kubernetes-进度追踪.md         # 进度追踪 (12/12 ✅)
+    ├── analysis-todo.md               # 分析待办清单
     ├── topics/                        # 12个独立主题文档
-    │   ├── 01-项目基本信息.md        ✅
-    │   ├── 02-项目结构.md            ✅
-    │   ├── 03-技术栈.md              ✅
-    │   ├── 04-核心功能.md            ✅
-    │   ├── 05-架构设计.md            ✅
-    │   ├── 06-代码质量.md            ✅
-    │   ├── 07-文档质量.md            ✅
-    │   ├── 08-项目活跃度.md          ✅
-    │   ├── 09-优缺点.md              ✅
-    │   ├── 10-适用场景.md            ✅
-    │   ├── 11-学习价值.md            ✅
-    │   └── 12-总结.md                ✅
+    │   ├── 01-项目基本信息.md         ✅
+    │   ├── 02-项目结构.md             ✅
+    │   ├── 03-技术栈.md               ✅
+    │   ├── 04-核心功能.md             ✅
+    │   ├── 05-架构设计.md             ✅
+    │   ├── 06-代码质量.md             ✅
+    │   ├── 07-文档质量.md             ✅
+    │   ├── 08-项目活跃度.md           ✅
+    │   ├── 09-优缺点.md               ✅
+    │   ├── 10-适用场景.md             ✅
+    │   ├── 11-学习价值.md             ✅
+    │   └── 12-总结.md                 ✅
     └── assets/                        # 图表资源
         ├── diagrams/
-        │   ├── module-structure.mmd
-        │   ├── middleware-flow.mmd
-        │   └── request-lifecycle.mmd
+        │   ├── architecture.mmd
+        │   ├── control-flow.mmd
+        │   └── component-relation.mmd
         └── images/
 ```
 
-### 主报告示例 (express-分析.md)
+### 主报告示例 (kubernetes-分析.md)
 
 ```markdown
 # Express.js 项目分析报告

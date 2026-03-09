@@ -5,18 +5,30 @@ description: Comprehensive open source project analysis using a structured templ
 
 # Project Analyzer
 
-This skill provides a systematic approach to analyzing open source projects with structured reporting and visual diagrams.
+This skill provides a systematic approach to analyzing projects with structured reporting and visual diagrams.
 
 ## When to Use This Skill
 
 Use this skill when the user:
 
-- Asks to "analyze" or "review" or "分析" an open source project
-- Wants to understand the architecture of a GitHub repository
-- Needs a detailed evaluation of a codebase
+- Asks to "analyze" or "review" or "分析" a project
+- Wants to understand the architecture of a codebase
+- Needs a detailed evaluation of a project (local or remote)
 - Requests a project report or summary
-- Mentions "I want to analyze [project name]"
+- Mentions "I want to analyze [project name/path]"
 - Asks for recommendations about a specific project
+
+## Supported Project Types
+
+**Local Projects** (Primary):
+- Local directory paths: `~/work/my-project`
+- Current directory: `.`
+- Relative paths: `./my-project`
+- Absolute paths: `/Users/ccc/work/todo/kubernetes`
+
+**Remote Projects** (Optional):
+- GitHub repositories: `owner/repo`
+- Git URLs: `https://github.com/owner/repo`
 
 ## Workflow Overview
 
@@ -53,12 +65,21 @@ For complex or technical projects, enable **深度分析模式** which adds:
 ### Step 0: Preparation
 
 1. **Read the template** from `~/.agents/skills/project-analyzer/TEMPLATE.md`
-2. **Create analysis file** by copying template to `[project-name]-分析.md`
+2. **Create analysis directory** at `[project-path]/ai-analysis-docs/`
 3. **Gather project info** using:
-   - GitHub API: `gh api repos/owner/repo`
-   - `gh repo view owner/repo --json description,stargazersCount,forksCount,primaryLanguage,licenseInfo`
-   - Web fetch for README and documentation
-   - Code structure exploration via `gh api` or `git clone`
+
+**For Local Projects** (Primary):
+- File system analysis: directory structure, file counts
+- README analysis: local README files
+- Code analysis: local source code examination
+- Configuration files: package.json, go.mod, Cargo.toml, etc.
+- Build scripts: Makefile, build.sh, etc.
+
+**For Remote Projects** (Optional):
+- GitHub API: `gh api repos/owner/repo`
+- `gh repo view owner/repo --json description,stargazersCount,forksCount,primaryLanguage,licenseInfo`
+- Web fetch for README and documentation
+- Code structure exploration via `gh api` or `git clone`
 
 ### Step 1-N: Sequential Analysis (Progressive)
 
@@ -67,17 +88,19 @@ For **each of the 12 topics**:
 1. **Analyze the topic** (collect info, create diagrams as needed)
 2. **Create individual topic document** and save to workspace
 3. **Update the main analysis file** with findings
-4. **Report progress** to user with format:
+4. **Update changelog.md** with document creation record
+5. **Report progress** to user with format:
    ```
    ✅ [Topic Name] 完成 (进度 X/12)
 
    [Key findings summary]
 
    📄 主题文档: [project-name]-[topic-name].md
+   📝 已更新 changelog.md
 
    🔄 继续下一个主题...
    ```
-5. **Automatically proceed** to next topic immediately (no user confirmation needed)
+6. **Automatically proceed** to next topic immediately (no user confirmation needed)
 
 **重要**: 分析完一个主题后立即汇报，然后主动继续下一个主题，不要等待用户确认。
 
@@ -91,17 +114,74 @@ After finishing all 12 topics:
 
 ## Information Gathering Strategy
 
-### For Basic Info (Topic 1)
+### For Local Projects (Primary)
+
+**For Basic Info (Topic 1)**:
+```bash
+# Directory analysis
+ls -la [project-path]
+find [project-path] -type f | wc -l
+find [project-path] -name "README*" -o -name "readme*"
+
+# Language detection
+find [project-path] -name "*.go" | wc -l
+find [project-path] -name "*.js" | wc -l
+find [project-path] -name "*.py" | wc -l
+
+# Configuration files
+ls [project-path]/*.json [project-path]/*.mod [project-path]/*.toml
+```
+
+**For Project Structure (Topic 2)**:
+```bash
+# Directory tree
+tree -L 3 [project-path]  # or: find [project-path] -type d | head -20
+
+# File statistics
+find [project-path] -type f -name "*.go" | head -10
+find [project-path] -type f -name "*.md" | head -10
+
+# Key directories
+ls -la [project-path]/cmd/
+ls -la [project-path]/pkg/
+ls -la [project-path]/src/
+```
+
+**For Tech Stack (Topic 3)**:
+```bash
+# Check for dependency files
+cat [project-path]/package.json
+cat [project-path]/go.mod
+cat [project-path]/requirements.txt
+cat [project-path]/Cargo.toml
+
+# Build tools
+ls [project-path]/Makefile
+ls [project-path]/build.sh
+cat [project-path]/.github/workflows/*.yml
+```
+
+**For Activity (Topic 8)**:
+```bash
+# Git history (if available)
+cd [project-path] && git log --oneline -10
+git log --since="1 month ago" --oneline | wc -l
+git log --since="1 year ago" --pretty=format:"%h %ad" --date=short | head -10
+```
+
+### For Remote Projects (Optional)
+
+**For Basic Info (Topic 1)**:
 ```bash
 gh api repos/owner/repo
 ```
 
-### For Project Structure (Topic 2)
+**For Project Structure (Topic 2)**:
 ```bash
 gh api repos/owner/repo/git/trees/main?recursive=1
 ```
 
-### For Tech Stack (Topic 3)
+**For Tech Stack (Topic 3)**:
 ```bash
 # Common dependency files
 gh api repos/owner/repo/contents/package.json
@@ -110,7 +190,7 @@ gh api repos/owner/repo/Cargo.toml
 gh api repos/owner/repo/go.mod
 ```
 
-### For Activity (Topic 8)
+**For Activity (Topic 8)**:
 ```bash
 gh api repos/owner/repo/issues?state=open&per_page=10
 gh api repos/owner/repo/pulls?state=open&per_page=10
@@ -251,6 +331,7 @@ Each analysis generates multiple files:
 ```
 [project-name]/
 └── ai-analysis-docs/                 # All analysis documents in one place
+    ├── changelog.md                 # Analysis changelog (NEW!)
     ├── [project-name]-分析.md       # Main consolidated report
     ├── [project-name]-进度追踪.md   # Progress tracking
     ├── analysis-todo.md             # Analysis TODO list

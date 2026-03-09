@@ -7,11 +7,12 @@ A comprehensive open source project analysis skill for OpenClaw agents.
 - 📋 12 步完整分析流程 + 8 步深度分析选项
 - 🔬 三种分析模式：快速评估、标准分析、深度剖析
 - 📊 Mermaid 可视化图表（架构图、流程图、依赖图等）
-- 🔍 GitHub API 集成（自动获取 star、结构、活跃度）
+- 💻 本地项目分析支持（无需 GitHub API）
 - 💻 源码级深度分析能力（函数调用链、数据结构、实现机制）
 - 📈 **渐进式文档创建**：每个主题立即创建独立文档
 - 📁 **结构化文件组织**：自动生成项目目录和分类文件
 - 🔄 **实时进度追踪**：随时查看分析进度和状态
+- 📝 **变更日志记录**：自动记录所有文档创建活动
 - 💾 **增量保存机制**：防止数据丢失，确保内容安全
 - 🎯 基于 Kubernetes 分析方法论的系统化分析框架
 
@@ -51,6 +52,7 @@ A comprehensive open source project analysis skill for OpenClaw agents.
 ```
 [project-name]/
 └── ai-analysis-docs/                   # 所有分析文档统一存放
+    ├── changelog.md                   # 分析变更日志 ✨
     ├── [project-name]-分析.md         # 主综合报告
     ├── [project-name]-进度追踪.md     # 实时进度追踪
     ├── analysis-todo.md               # 分析待办清单
@@ -113,6 +115,7 @@ git clone https://github.com/[your-username]/project-analyzer ~/.agents/skills/p
 project-analyzer/
 ├── SKILL.md                    # Skill 定义和使用指南
 ├── TEMPLATE.md                 # 分析模板（标准 + 深度分析）
+├── CHANGELOG_TEMPLATE.md       # 变更日志模板 ✨
 ├── WORKFLOW.md                 # 渐进式分析工作流程
 ├── DOCUMENTATION_GUIDELINES.md # 文档组织规范和命名约定
 ├── EXAMPLE_WORKFLOW.md         # 渐进式文档创建示例
