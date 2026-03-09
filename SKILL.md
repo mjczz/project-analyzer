@@ -66,6 +66,8 @@ For complex or technical projects, enable **深度分析模式** which adds:
 
 1. **Read the template** from `~/.agents/skills/project-analyzer/TEMPLATE.md`
 2. **Create analysis directory** at `[project-path]/ai-analysis-docs/`
+   - **Important**: Analysis documents are saved INSIDE the project being analyzed
+   - Example: `/Users/ccc/work/todo/kubernetes/ai-analysis-docs/`
 3. **Gather project info** using:
 
 **For Local Projects** (Primary):
@@ -109,7 +111,8 @@ For **each of the 12 topics**:
 After finishing all 12 topics:
 
 1. **Present summary** with key insights
-2. **Show file location**: `/Users/ccc/.openclaw/workspace/[project-name]/ai-analysis-docs/[project-name]-分析.md`
+2. **Show file location**: `[project-path]/ai-analysis-docs/[project-name]-分析.md`
+   - Example: `/Users/ccc/work/todo/kubernetes/ai-analysis-docs/kubernetes-分析.md`
 3. **Offer follow-up** (e.g., "Want me to dive deeper into any specific area?")
 
 ## Information Gathering Strategy
@@ -250,33 +253,51 @@ Always report after completing each topic:
 
 - **Analysis template**: `~/.agents/skills/project-analyzer/TEMPLATE.md`
 - **Backup copy**: `/Users/ccc/.openclaw/workspace/项目分析模版.md` (kept for reference)
-- **Output directory**: `/Users/ccc/.openclaw/workspace/[project-name]/ai-analysis-docs/`
+- **Output directory**: `[project-path]/ai-analysis-docs/` (INSIDE the analyzed project)
 - **Output naming**: `[project-name]-分析.md`
+
+## Important: Document Location
+
+**Analysis documents are ALWAYS saved in the analyzed project directory:**
+```
+[project-path]/ai-analysis-docs/
+├── changelog.md
+├── [project-name]-分析.md
+├── [project-name]-进度追踪.md
+├── analysis-todo.md
+├── topics/
+└── assets/
+```
+
+**Examples:**
+- Analyzing `/Users/ccc/work/todo/kubernetes` → Documents saved in `/Users/ccc/work/todo/kubernetes/ai-analysis-docs/`
+- Analyzing `/Users/ccc/work/my-project` → Documents saved in `/Users/ccc/work/my-project/ai-analysis-docs/`
+- Analyzing `.` (current directory) → Documents saved in `./ai-analysis-docs/`
 
 ## Example Response Pattern
 
 When user says "Analyze facebook/react":
 
 ```
-开始分析 facebook/react 项目...
+开始分析 /Users/ccc/work/todo/kubernetes 项目...
 
 📋 正在收集项目信息...
 📋 项目基本信息 完成 (进度 1/12)
-- Stars: 230,000+
-- Language: JavaScript
-- License: MIT
+- 主要语言: Go (95%+)
+- 文件总数: 50,000+
+- 项目路径: /Users/ccc/work/todo/kubernetes
 
 继续下一个主题...
 
 🏗️ 项目结构 完成 (进度 2/12)
-- Main directories: packages/, fixtures/, scripts/
-- Monorepo with 20+ packages
+- 主要目录: cmd/, pkg/, staging/
+- 核心组件: kube-apiserver, kubelet, kube-proxy
 
 继续下一个主题...
 [... continues through all 12 topics ...]
 
 ✅ 分析完成！
-分析文件已保存: /Users/ccc/.openclaw/workspace/react-分析.md
+分析文件已保存: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/kubernetes-分析.md
 
 想深入了解哪个部分吗？
 ```

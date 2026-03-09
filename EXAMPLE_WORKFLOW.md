@@ -11,17 +11,19 @@
 ```
 🔍 开始分析本地 Kubernetes 项目...
 
-📁 创建项目目录结构:
+📁 创建分析目录结构（在被分析项目内部）:
 /Users/ccc/work/todo/kubernetes/ai-analysis-docs/
 ├── kubernetes-分析.md
 ├── kubernetes-进度追踪.md
 ├── analysis-todo.md
+├── changelog.md
 ├── topics/
 └── assets/
 
 📊 分析模式: 标准分析 (12主题)
 🎯 开始时间: 2026-03-09 14:30:00
 📍 项目路径: /Users/ccc/work/todo/kubernetes
+📂 分析文档: 项目内的 ai-analysis-docs/ 目录
 ```
 
 ---
@@ -37,6 +39,7 @@
 **保存阶段**:
 ```
 💾 创建文档: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/topics/01-项目基本信息.md
+   (注意：文档保存在被分析项目内部)
 ```
 
 **更新阶段**:
