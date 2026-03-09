@@ -1,0 +1,13 @@
+# Ignore common editor and system files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.log
+
+# Ignore any local test files or temporary outputs
+*-分析.md
+test-*.md
