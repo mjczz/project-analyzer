@@ -91,21 +91,30 @@ For complex or technical projects, enable **Deep Analysis Mode** which adds:
 
 For **each of the 12 topics**:
 
-1. **Update analysis-todo.md** - Mark current topic as "In Progress"
-2. **Analyze the topic** (collect info, create diagrams as needed)
-3. **Create individual topic document** and save to project's ai-analysis-docs directory
+1. **Report starting** to user with format:
+   ```
+   🔵 [Topic Name] started (progress X/12)
+
+   📋 Analysis scope: [brief description of what will be analyzed]
+   🎯 Focus areas: [key aspects to investigate]
+
+   🔄 Starting analysis...
+   ```
+2. **Update analysis-todo.md** - Mark current topic as "In Progress"
+3. **Analyze the topic** (collect info, create diagrams as needed)
+4. **Create individual topic document** and save to project's ai-analysis-docs directory
    - **🎉 File creation feedback**: Immediately report when file is created
    - Format: `📄 Created: [file-path]`
-4. **Update the main analysis file** with findings
+5. **Update the main analysis file** with findings
    - **📝 File update feedback**: Report when main file is updated
    - Format: `🔄 Updated: [main-analysis-file]`
-5. **Update changelog.md** with document creation record
+6. **Update changelog.md** with document creation record
    - **📋 Changelog feedback**: Report changelog update
    - Format: `📋 Updated: changelog.md`
-6. **Update analysis-todo.md** - Mark current topic as "Completed" and update progress statistics
+7. **Update analysis-todo.md** - Mark current topic as "Completed" and update progress statistics
    - **✅ Progress feedback**: Report progress update
    - Format: `📊 Updated: analysis-todo.md (progress X/12)`
-7. **Report completion** to user with format:
+8. **Report completion** to user with format:
    ```
    ✅ [Topic Name] completed (progress X/12)
 
@@ -119,9 +128,13 @@ For **each of the 12 topics**:
 
    🔄 Continuing to next topic...
    ```
-8. **Automatically proceed** to next topic immediately (no user confirmation needed)
+9. **Automatically proceed** to next topic immediately (no user confirmation needed)
 
-**Important**: After completing each topic, provide immediate file creation feedback, report completion summary, and then automatically continue to the next topic without waiting for user confirmation.
+**Important**:
+1. Always report when STARTING each topic analysis
+2. Provide immediate file creation feedback
+3. Report completion summary
+4. Then automatically continue to the next topic without waiting for user confirmation
 
 ### Final Step: Complete
 
@@ -310,7 +323,11 @@ When user says "Analyze /Users/ccc/work/todo/kubernetes":
 ```
 Starting analysis of /Users/ccc/work/todo/kubernetes project...
 
-📋 Gathering project information...
+🔵 Project Basic Info started (progress 1/12)
+📋 Analysis scope: Project metadata, language statistics, file structure overview
+🎯 Focus areas: Primary language, file counts, project path, README analysis
+🔄 Starting analysis...
+
 📋 Project Basic Info completed (progress 1/12)
 - Main language: Go (95%+)
 - Total files: 50,000+
@@ -323,6 +340,11 @@ Starting analysis of /Users/ccc/work/todo/kubernetes project...
 • Updated: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/analysis-todo.md (progress 1/12)
 
 🔄 Continuing to next topic...
+
+🔵 Project Structure started (progress 2/12)
+📋 Analysis scope: Directory organization, module relationships, component layout
+🎯 Focus areas: Main directories, core components, file distribution patterns
+🔄 Starting analysis...
 
 🏗️ Project Structure completed (progress 2/12)
 - Main directories: cmd/, pkg/, staging/
@@ -346,6 +368,7 @@ Would you like to dive deeper into any specific area?
 ## Important Notes
 
 - **Always complete all 12 topics** - don't stop early unless user says "stop"
+- **🔵 Report STARTING each topic** - always inform user when beginning each topic analysis
 - **Report after each topic** - immediately inform user when each topic is done
 - **Continue automatically** - proceed to next topic without waiting for user confirmation
 - **Create individual topic documents** - each topic gets its own markdown file
@@ -386,6 +409,7 @@ Key findings:
 
 ### User Experience:
 - Users can see real-time progress
+- **Clear feedback when STARTING each topic** - users know what's being analyzed next
 - Clear feedback after each topic completion
 - **Immediate file creation feedback** - users know exactly when files are created
 - Detailed file operation tracking (created vs updated)
