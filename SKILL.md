@@ -94,23 +94,34 @@ For **each of the 12 topics**:
 1. **Update analysis-todo.md** - Mark current topic as "In Progress"
 2. **Analyze the topic** (collect info, create diagrams as needed)
 3. **Create individual topic document** and save to project's ai-analysis-docs directory
+   - **🎉 File creation feedback**: Immediately report when file is created
+   - Format: `📄 Created: [file-path]`
 4. **Update the main analysis file** with findings
+   - **📝 File update feedback**: Report when main file is updated
+   - Format: `🔄 Updated: [main-analysis-file]`
 5. **Update changelog.md** with document creation record
+   - **📋 Changelog feedback**: Report changelog update
+   - Format: `📋 Updated: changelog.md`
 6. **Update analysis-todo.md** - Mark current topic as "Completed" and update progress statistics
-7. **Report progress** to user with format:
+   - **✅ Progress feedback**: Report progress update
+   - Format: `📊 Updated: analysis-todo.md (progress X/12)`
+7. **Report completion** to user with format:
    ```
    ✅ [Topic Name] completed (progress X/12)
 
    [Key findings summary]
 
-   📄 Topic document: [project-name]-[topic-name].md
-   📝 Updated changelog.md and analysis-todo.md
+   📁 Files created/updated:
+   • Created: [topic-file-path]
+   • Updated: [main-analysis-file]
+   • Updated: changelog.md
+   • Updated: analysis-todo.md
 
    🔄 Continuing to next topic...
    ```
 8. **Automatically proceed** to next topic immediately (no user confirmation needed)
 
-**Important**: After completing each topic, report immediately and then automatically continue to the next topic without waiting for user confirmation.
+**Important**: After completing each topic, provide immediate file creation feedback, report completion summary, and then automatically continue to the next topic without waiting for user confirmation.
 
 ### Final Step: Complete
 
@@ -252,8 +263,16 @@ Always report after completing each topic:
 
 [Optional: Show a small preview of the section content]
 
+📁 Files created/updated:
+• Created: [specific-file-path]
+• Updated: [specific-file-path]
+• Updated: changelog.md
+• Updated: analysis-todo.md (progress X/12)
+
 🔄 Continuing to next topic...
 ```
+
+**CRITICAL**: Every topic completion MUST include explicit file operation feedback showing exactly which files were created and updated.
 
 ## Template and Guide Locations
 
@@ -297,13 +316,25 @@ Starting analysis of /Users/ccc/work/todo/kubernetes project...
 - Total files: 50,000+
 - Project path: /Users/ccc/work/todo/kubernetes
 
-Continuing to next topic...
+📁 Files created/updated:
+• Created: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/topics/01-project-basic-info.md
+• Updated: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/kubernetes-analysis.md
+• Updated: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/changelog.md
+• Updated: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/analysis-todo.md (progress 1/12)
+
+🔄 Continuing to next topic...
 
 🏗️ Project Structure completed (progress 2/12)
 - Main directories: cmd/, pkg/, staging/
 - Core components: kube-apiserver, kubelet, kube-proxy
 
-Continuing to next topic...
+📁 Files created/updated:
+• Created: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/topics/02-project-structure.md
+• Updated: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/kubernetes-analysis.md
+• Updated: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/changelog.md
+• Updated: /Users/ccc/work/todo/kubernetes/ai-analysis-docs/analysis-todo.md (progress 2/12)
+
+🔄 Continuing to next topic...
 [... continues through all 12 topics ...]
 
 ✅ Analysis completed!
@@ -320,6 +351,8 @@ Would you like to dive deeper into any specific area?
 - **Create individual topic documents** - each topic gets its own markdown file
 - **Save incrementally** - create and save each topic document immediately after analysis
 - **Update main document** - consolidate all findings into the main analysis file
+- **🎉 CRITICAL: File operation feedback** - ALWAYS report every file creation and update operation
+- **Detailed file tracking** - distinguish between "Created" (new files) and "Updated" (modified files)
 - **Use mermaid diagrams** where appropriate - they add significant value
 - **Be specific** - avoid generic comments, provide concrete details
 - **Cite sources** - mention where info came from (GitHub, docs, etc.)
@@ -342,8 +375,11 @@ Key findings:
 • Finding 2
 • Finding 3
 
-📄 Topic document: [file path]
-📝 Updated changelog.md
+📁 Files created/updated:
+• Created: [topic-document-path]
+• Updated: [main-analysis-file]
+• Updated: changelog.md
+• Updated: analysis-todo.md (progress X/12)
 
 🔄 Continuing to next topic...
 ```
@@ -351,8 +387,11 @@ Key findings:
 ### User Experience:
 - Users can see real-time progress
 - Clear feedback after each topic completion
+- **Immediate file creation feedback** - users know exactly when files are created
+- Detailed file operation tracking (created vs updated)
 - No frequent interaction needed, analysis proceeds automatically
 - Users can say "stop" at any time to interrupt the analysis
+- Complete audit trail of all file operations
 
 ## Incremental Documentation Strategy
 
