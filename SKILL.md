@@ -88,7 +88,7 @@ For complex or technical projects, enable **深度分析模式** which adds:
 For **each of the 12 topics**:
 
 1. **Analyze the topic** (collect info, create diagrams as needed)
-2. **Create individual topic document** and save to workspace
+2. **Create individual topic document** and save to project's ai-analysis-docs directory
 3. **Update the main analysis file** with findings
 4. **Update changelog.md** with document creation record
 5. **Report progress** to user with format:
@@ -252,7 +252,6 @@ Always report after completing each topic:
 ## Template Location
 
 - **Analysis template**: `~/.agents/skills/project-analyzer/TEMPLATE.md`
-- **Backup copy**: `/Users/ccc/.openclaw/workspace/项目分析模版.md` (kept for reference)
 - **Output directory**: `[project-path]/ai-analysis-docs/` (INSIDE the analyzed project)
 - **Output naming**: `[project-name]-分析.md`
 
