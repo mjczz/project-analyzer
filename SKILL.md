@@ -1,6 +1,15 @@
 ---
 name: project-analyzer
 description: Comprehensive open source project analysis using a structured template. Use when user asks to analyze an open source project, review code architecture, or evaluate a GitHub repository.
+license: MIT
+metadata:
+   author: https://github.com/mjczz
+   version: "1.0.0"
+   domain: language
+   triggers: project analysis
+   role: specialist
+   scope: implementation
+   related-skills: github, pretty-mermaid, coding-router
 ---
 
 # Project Analyzer
